@@ -1,0 +1,148 @@
+"-- Please Select --","
+                    -- મહેરબાની કરી, પસંદ કરો --
+                "
+"Admin","એડમિન"
+"Are you sure?","શું તમે ખાતરી કરો છો?"
+"Back","પાછું"
+"Backup Options","
+                    બૅકઅપ વિકલ્પો
+                "
+"Browser Capabilities Detection","બ્રાઉઝર ક્ષમતાઓની તપાસ"
+"Cache Storage Management","
+                    કેશ સ્ટોરેજ મેનેજમેન્ટ
+                "
+"Cancel","રદ કરો"
+"Card type does not match credit card number.","કાર્ડ પ્રકાર ક્રેડિટ કાર્ડ નંબરથી મેળ ખાતું નથી."
+"Code","
+                    કોડ
+                "
+"Copyright","કૉપિરાઇટ"
+"Country","દેશ"
+"Create Store","
+                    સ્ટોર બનાવો
+                "
+"Create Store View","
+                    સ્ટોર દૃશ્ય બનાવો
+                "
+"Create Website","
+                    વેબસાઇટ બનાવો
+                "
+"Credit card number does not match credit card type.","ક્રેડિટ કાર્ડ નંબર ક્રેડિટ કાર્ડ પ્રકારથી મેળ ખાતું નથી."
+"Custom Design","
+                    કસ્ટમ ડિઝાઇન
+                "
+"Dashboard","ડેશબોર્ડ"
+"Date From","
+                    તારીખ થી
+                "
+"Default","ડિફૉલ્ટ"
+"Default Country","ડિફaultલ્ટ દેશ"
+"Default Robots","ડિફૉલ્ટ રોબોટ્સ"
+"Default Store","
+                    ડિફોલ્ટ સ્ટોર
+                "
+"Default Store View","
+                    ડિફોલ્ટ સ્ટોર દૃશ્ય
+                "
+"Delete","
+                    કાઢી નાખો
+                "
+"Delete Store","
+                    સ્ટોર કાઢી નાખો
+                "
+"Design","ડિઝાઇન"
+"Design Change","
+                    ડિઝાઇન બદલો
+                "
+"Display Demo Store Notice","પ્રદર્શન ડેમો નોટિસ"
+"Edit Design Change","
+                    ડિઝાઇન બદલો ફેરફાર કરો
+                "
+"Edit Store","
+                    સ્ટોર સંપાદિત કરો
+                "
+"Edit Store View","
+                    સ્ટોર દૃશ્ય સંપાદિત કરો
+                "
+"Enabled","સક્ષમ"
+"Favicon Icon","ફેવિકોન આયકન"
+"Flush Cache Storage","
+                    ફ્લશ કેશ સ્ટોરેજ
+                "
+"Flush Magento Cache","
+                    ફ્લશ Magento કેશ
+                "
+"Footer","ફૂટર"
+"General","
+                    સામાન્ય
+                "
+"General Settings","
+                    સામાન્ય સુયોજનો
+                "
+"Global","વૈશ્વિક"
+"HTML Head","એચટીએમએલ હેડ"
+"Header","હેડર"
+"Incorrect credit card expiration date.","ખોટો ક્રેડિટ કાર્ડ સમાપ્તિ તારીખ."
+"Input type ""%value%"" not found in the input types list.","ઇનપુટ પ્રકાર ""%value%"" ઇનપુટ પ્રકારો સૂચિમાં મળ્યું નથી."
+"Invalid date","અમાન્ય તારીખ"
+"Layout","લેઆઉટ"
+"Logo Image","લોગો છબી"
+"Logo Image Alt","લોગો છબી Alt"
+"Manage Stores","સ્ટોર્સ મેનેજ કરો"
+"Media Storage","મીડિયા સ્ટોરેજ"
+"Miscellaneous HTML","વિવિધ એચટીએમએલ"
+"Name","
+                    નામ
+                "
+"New Store","
+                    નવું સ્ટોર
+                "
+"New Store View","
+                    નવું સ્ટોર દૃશ્ય
+                "
+"No","ના"
+"PHP SOAP extension is required.","PHP, SOAP એક્સ્ટેંશન આવશ્યક છે."
+"Please enter a number 0 or greater in this field.","કૃપા કરીને આ ક્ષેત્રમાં સંખ્યા 0 અથવા તેથી વધુ દાખલ કરો."
+"Please enter a number 1 or greater in this field.","કૃપા કરીને આ ક્ષેત્રમાં કોઈ સંખ્યા 1 અથવા વધુ દાખલ કરો."
+"Please enter a number greater than 0 in this field.","કૃપા કરીને આ ક્ષેત્રમાં 0 કરતાં મોટી સંખ્યા દાખલ કરો."
+"Please enter a valid $ amount. For example $100.00.","કૃપા કરી માન્ય $ રકમ દાખલ કરો. ઉદાહરણ તરીકે $ 100.00."
+"Please enter a valid credit card number.","મહેરબાની કરીને માન્ય ક્રેડિટ કાર્ડ નંબર લખો."
+"Please enter a valid credit card verification number.","કૃપા કરી કોઈ માન્ય ક્રેડિટ કાર્ડ ચકાસણી નંબર દાખલ કરો."
+"Please enter a valid date.","કૃપા કરી માન્ય તારીખ દાખલ કરો."
+"Please enter a valid month (1-12).","કૃપા કરી કોઈ માન્ય મહિનો દાખલ કરો (1-12)."
+"Please enter a valid number in this field.","કૃપા કરીને આ ક્ષેત્રમાં માન્ય નંબર દાખલ કરો."
+"Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.","કૃપા કરીને સાચો ફોન નંબર નાખો. ઉદાહરણ તરીકે (123) 456-7890 અથવા 123-456-7890."
+"Please enter a valid zip code.","કૃપા કરી કોઈ માન્ય પિન કોડ દાખલ કરો."
+"Please enter issue number or start date for switch/solo card type.","કૃપા કરીને ઇશ્યૂ નંબર અથવા સ્વિચ / સોલો કાર્ડ પ્રકાર માટે પ્રારંભ તારીખ દાખલ કરો."
+"Please make sure your passwords match.","કૃપા કરીને ખાતરી કરો કે તમારા પાસવર્ડ્સ મેચ કરે છે."
+"Please select State/Province.","કૃપા કરીને રાજ્ય / પ્રાંત પસંદ કરો."
+"Please select an option.","કૃપા કરીને એક વિકલ્પ પસંદ કરો."
+"Please select one of the options.","કૃપા કરીને વિકલ્પોમાંથી એક પસંદ કરો."
+"Please use letters only (a-z or A-Z) in this field.","કૃપા કરીને આ ક્ષેત્રમાં ફક્ત અક્ષરો (a-z અથવા A-Z) નો ઉપયોગ કરો."
+"Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.","કૃપા કરીને આ તારીખ ફોર્મેટનો ઉપયોગ કરો: ડીડી / એમએમ / વાયવાય. 17 માર્ચ, 2006 માટે 17/03/2006 ઉદાહરણ તરીકે."
+"Recovery Link Expiration Period (hours)","પુનઃપ્રાપ્તિ લિંક સમાપ્તિ સમયગાળો (કલાકો)"
+"Save","
+                    સાચવો
+                "
+"Sort Order","
+                    ક્રમબધ ઓર્ડર
+                "
+"Status","સ્થિતિ"
+"Store","સંગ્રહ"
+"Store Information","
+                    સ્ટોર માહિતી
+                "
+"Store View","દુકાન દૃશ્ય"
+"Store View Information","
+                    સ્ટોર દૃશ્ય માહિતી
+                "
+"System","સિસ્ટમ"
+"The value is not within the specified range.","મૂલ્ય ઉલ્લેખિત શ્રેણીની અંદર નથી."
+"Themes","થીમ્સ"
+"This is a required field.","આ જગ્યા ભરવી જરૂરી છે."
+"This will be included before head closing tag in page HTML.","આ પૃષ્ઠ HTML માં હેડ ક્લોઝિંગ ટૅગ પહેલાં શામેલ કરવામાં આવશે."
+"None","કંઈ નહીં"
+"VAT Number","વેટ નંબર"
+"Website","વેબસાઇટ"
+"Welcome Text","સ્વાગત ટેક્સ્ટ"
+"Yes","હા"

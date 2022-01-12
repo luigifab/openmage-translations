@@ -1,0 +1,7 @@
+"Buyer's Tax ID","Buyer's VAT ID"
+"Buyer's Tax ID Type","Buyer's VAT ID Type"
+"Matched Address only (no ZIP)","Matched Address only (no ZIP/Postcode)"
+"Matched five-digit ZIP only (no Address)","Matched five-digit ZIP/Postcode only (no Address)"
+"Please select region, state or province","Please select a county or province"
+"State/Province","County"
+"Zip/Postal Code","Post Code"
