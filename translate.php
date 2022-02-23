@@ -36,6 +36,7 @@ else if (in_array('update', $argv)) {
 	if (!is_dir('./src-untranslated/'))
 		mkdir('./src-untranslated/', 0755);
 
+	// sorted by priority
 	$sources = [
 		'./locales/',
 		'./src-untranslated/',
@@ -71,6 +72,7 @@ else if (in_array('update', $argv)) {
 	$col3 = '------------------';
 	$col4 = '-------';
 
+	// action
 	foreach ($locales as $locale) {
 
 		if (($locale !== 'en_US') && (mb_strlen($locale) >= 5)) {
@@ -131,6 +133,23 @@ else if (in_array('update', $argv)) {
 			}
 		}
 	}
+
+	// composer.json
+	$content = file_get_contents('./composer.json');
+	$files = [];
+	$data  = [];
+
+	exec('find locales/ -type f', $files);
+	foreach ($files as $file) {
+		$file = str_replace('locales/', '', $file);
+		$data[] = '            ["locales/'.$file.'", "app/locale/'.$file.'"],';
+	}
+
+	$inline  = implode("\n", $data);
+	$inline  = mb_substr($inline, 0, -1);
+	$content = preg_replace('#extra": {[^}]+}#', "extra\": {\n        \"map\": [\n$inline\n        ]\n    }", $content);
+
+	file_put_contents('./composer.json', $content);
 }
 else {
 	echo 'Usage: php .../translate.php [downloadm2] [update]',"\n";

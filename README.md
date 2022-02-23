@@ -1,15 +1,23 @@
-### Installation
+### Installation in OpenMage
+
+Warning! Experimental.
+
+- remove all `app/locales/*/Mage_*.csv`
+- run: `composer require luigifab/openmage-translations`
+
+### Installation for translators
 
 - `git clone git@github.com:luigifab/openmage-translations.git xyz`
 - `cd xyz/`
 - `git clone git@github.com:OpenMage/magento-lts.git src-openmage`
 - `cd src-openmage/`
+- please read line 39 of translate.php for extra languages packs
 - `wget https://patch-diff.githubusercontent.com/raw/OpenMage/magento-lts/pull/1618.diff`
 - `git apply 1618.diff`
 - `wget https://patch-diff.githubusercontent.com/raw/OpenMage/magento-lts/pull/1621.diff`
 - `git apply 1621.diff`
 
-### Usage
+### Usage for translators
 
 - download CSV files from M2: `php translate.php downloadm2`
 - update CSV files for OpenMage: `php translate.php update`
@@ -29,7 +37,7 @@ You can update CSV files in `src-untranslated/`, then run: `php translate.php up
 | be_BY   |       51 |            96/7184 |   1.34% |
 | bg_BG   |       52 |          4152/7184 |  57.80% |
 | bn_BD   |        2 |             9/7184 |   0.13% |
-| ca_ES   |        2 |           804/7184 |  11.19% |
+| ca_ES   |        2 |           833/7184 |  11.60% |
 | ckb_IR  |        2 |            13/7184 |   0.18% |
 | cs_CZ   |       53 |          4216/7184 |  58.69% |
 | cy_GB   |       51 |           358/7184 |   4.98% |
@@ -40,8 +48,8 @@ You can update CSV files in `src-untranslated/`, then run: `php translate.php up
 | de_DU   |        2 |          3077/7184 |  42.83% |
 | el_GR   |       52 |          3957/7184 |  55.08% |
 | en_AU   |        2 |            16/7184 |   0.22% |
-| en_GB   |        2 |            52/7184 |   0.72% |
-| en_ID   |        2 |          2641/7184 |  36.76% |
+| en_GB   |        2 |            69/7184 |   0.96% |
+| en_ID   |        2 |          2642/7184 |  36.78% |
 | en_PT   |        2 |            16/7184 |   0.22% |
 | es_AR   |       52 |          3315/7184 |  46.14% |
 | es_CL   |       51 |          1740/7184 |  24.22% |
@@ -54,7 +62,7 @@ You can update CSV files in `src-untranslated/`, then run: `php translate.php up
 | fa_IR   |        2 |          3170/7184 |  44.13% |
 | fi_FI   |       52 |          3270/7184 |  45.52% |
 | fil_PH  |        2 |             7/7184 |   0.10% |
-| fr_CA   |       52 |          3926/7184 |  54.65% |
+| fr_CA   |       52 |          3927/7184 |  54.66% |
 | fr_FR   |       52 |          4349/7184 |  60.54% |
 | gl_ES   |       51 |          2947/7184 |  41.02% |
 | gu_IN   |        2 |          1446/7184 |  20.13% |
@@ -77,11 +85,12 @@ You can update CSV files in `src-untranslated/`, then run: `php translate.php up
 | ml_IN   |        2 |           651/7184 |   9.06% |
 | ms_MY   |       51 |            36/7184 |   0.50% |
 | my_MM   |        2 |            18/7184 |   0.25% |
-| nb_NO   |       52 |          3572/7184 |  49.72% |
-| nl_BE   |        2 |          2922/7184 |  40.67% |
+| nb_NO   |       52 |          3578/7184 |  49.81% |
+| nl_BE   |        2 |          2924/7184 |  40.70% |
+| nl_DI   |        2 |          2886/7184 |  40.17% |
 | nl_NL   |       52 |          4169/7184 |  58.03% |
 | nl_di   |        2 |          2884/7184 |  40.14% |
-| nn_NO   |       52 |          2025/7184 |  28.19% |
+| nn_NO   |       52 |          2035/7184 |  28.33% |
 | no_NO   |        2 |          2034/7184 |  28.31% |
 | pl_PL   |       52 |          4300/7184 |  59.86% |
 | pt_BR   |       52 |          4425/7184 |  61.60% |
@@ -95,11 +104,11 @@ You can update CSV files in `src-untranslated/`, then run: `php translate.php up
 | sq_AL   |       52 |            99/7184 |   1.38% |
 | sr_CS   |        2 |           986/7184 |  13.72% |
 | sr_SP   |        2 |           334/7184 |   4.65% |
-| sv_FI   |        2 |          2097/7184 |  29.19% |
+| sv_FI   |        2 |          2100/7184 |  29.23% |
 | sv_SE   |       52 |          3565/7184 |  49.62% |
 | sw_KE   |       52 |            19/7184 |   0.26% |
 | sw_TZ   |        2 |            18/7184 |   0.25% |
-| th_TH   |       52 |          2415/7184 |  33.62% |
+| th_TH   |       52 |          2417/7184 |  33.64% |
 | tl_PH   |        1 |             0/7184 |   0.00% |
 | tr_TR   |       52 |          4523/7184 |  62.96% |
 | uk_UA   |       52 |          2619/7184 |  36.46% |
