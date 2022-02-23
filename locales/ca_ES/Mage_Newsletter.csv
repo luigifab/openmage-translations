@@ -10,6 +10,8 @@
 "Message","Missatge"
 "Newsletter","Butlletí"
 "Newsletter Message Preview","Vista prèvia del missatge del butlletí"
+"Newsletter subscription confirmation","Confirmació de subscripció al butlletí de notícies"
+"Newsletter unsubscription success","Baixa del butlletí de notícies realitzada correctament"
 "Not Sent","No enviat"
 "Paused","En pausa"
 "Please enter a valid email address.","Si us plau, introdueixi una adreça de correu electrònic vàlida."
@@ -34,3 +36,4 @@
 "Unsubscribe","Anul·lar la subscripció"
 "Unsubscribed","Subscripció anul·lada"
 "Website","Lloc web"
+"Your subscription has been confirmed.","La seva subscripció ha estat confirmada."
