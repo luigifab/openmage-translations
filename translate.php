@@ -143,9 +143,10 @@ else if (in_array('update', $argv)) {
 	exec('find locales/ -type f', $files);
 	foreach ($files as $file) {
 		$file = str_replace('locales/', '', $file);
-		$data[] = '            ["locales/'.$file.'", "app/locale/'.$file.'"],';
+		$data[$file] = '            ["locales/'.$file.'", "app/locale/'.$file.'"],';
 	}
 
+	ksort($data);
 	$inline  = implode("\n", $data);
 	$inline  = mb_substr($inline, 0, -1);
 	$content = preg_replace('#extra": {[^}]+}#', "extra\": {\n        \"map\": [\n$inline\n        ]\n    }", $content);
@@ -227,7 +228,7 @@ function loadCSV(array $files, bool $onlyKeys = false) {
 		while (($line = fgetcsv($resource, 2500)) !== false) {
 			$line = (array) $line; // (yes)
 			if (!empty($line[0]) && !empty($line[1]) && empty($data[$line[0]]))
-				$data[$line[0]] = stripslashes($line[1]); // no trim @todo
+				$data[$line[0]] = rtrim(stripslashes($line[1]), "\r\n");
 		}
 
 		fclose($resource);
