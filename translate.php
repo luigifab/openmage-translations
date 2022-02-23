@@ -73,9 +73,10 @@ else if (in_array('update', $argv)) {
 	$col4 = '-------';
 
 	// action
+	$ignore = ['en_US', 'ckb_IR', 'de_DU', 'en_ID', 'en_PT', 'ku_TR', 'nl_DI', 'nl_di', 'no_NO', 'sr_CS', 'sr_SP'];
 	foreach ($locales as $locale) {
 
-		if (($locale !== 'en_US') && (mb_strlen($locale) >= 5)) {
+		if (!in_array($locale, $ignore) && (mb_strlen($locale) >= 5)) {
 
 			// load translations from all src directories
 			$files = [];
