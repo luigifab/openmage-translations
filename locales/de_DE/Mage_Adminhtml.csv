@@ -1121,7 +1121,6 @@
 "Warning! Empty value can cause problems with CSV format.","Achtung! Leerer Wert kann Fehler in CSV-Dateien verursachen."
 "Warning: Please do not close the window during importing/exporting data","Warnung: Bitte schließen Sie das Fenster nicht während des Import-/Export Vorgangs"
 "Watermark File for %s","Wasserzeichen Datei für %s"
-"We appreciate our merchants' feedback, please <a href=""#"" onclick=""surveyAction('yes'); return false;"">take our survey</a> to provide insight on the features you would like included in Magento. <a href=""#"" onclick=""surveyAction('no'); return false;"">Remove this notification</a>","Die Meinung unserer Kunden ist uns wichtig, bitte <a href=""#"" onclick=""surveyAction('yes'); return false;"">nehmen Sie an unserer Umfrage teil</a>, um Wünsche zu äußern. <a href=""#"" onclick=""surveyAction('no'); return false;"">Diesen Hinweis ausblenden</a>"
 "We're in our typing table, coding away more features for Magento. Thank you for your patience.","Wir arbeiten daran. Vielen Dank für Ihre Geduld."
 "Web Section","Web"
 "Web services","Web Dienste"
