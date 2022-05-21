@@ -1,6 +1,7 @@
 "* Required Fields","* pola wymagane"
 "--Please Select--","--Proszę wybrać--"
 "<label>Make Check payable to:</label> %s","<label>Czek płatny dla:</label> %s"
+"Automatically Invoice All Items","Automatycznie fakturuj wszystkie produkty"
 "Bank Transfer Payment","Płatność przelewem bankowym"
 "Card Verification Number","Numer weryfikacyjny karty"
 "Cash On Delivery Payment","Płatne przy odbiorze"

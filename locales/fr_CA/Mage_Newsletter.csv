@@ -30,7 +30,6 @@
 "Error Text","Texte d'erreur"
 "Follow this link to unsubscribe <!-- This tag is for unsubscribe link  --><a href=""{{var subscriber.getUnsubscriptionLink()}}"">{{var subscriber.getUnsubscriptionLink()}}</a>","Cliquez sur ce lien pour vous désinscrire <!-- Sert au lien de désinscription --><a href=""{{var subscriber.getUnsubscriptionLink()}}"">{{var subscriber.getUnsubscriptionLink()}}</a>"
 "Guest","Invité"
-"ID","Identifiant"
 "Need to Confirm","Confirmation nécessaire"
 "New Newsletter Template","Nouveau gabarit d'infolettre"
 "New Template","Nouveau gabarit"

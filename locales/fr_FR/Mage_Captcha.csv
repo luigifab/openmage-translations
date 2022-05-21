@@ -7,6 +7,7 @@
 "Displaying Mode","Affichage du mode"
 "Enable CAPTCHA in Admin","Activer CAPTCHA dans Admin"
 "Enable CAPTCHA on Frontend","Activer CAPTCHA sur Frontend"
+"Font","Police"
 "Forms","Formulaires"
 "If 0 is specified, CAPTCHA on the Login form will be always available.","Si 0 est spécifié, CAPTCHA sur le formulaire de connexion sera toujours disponible."
 "Incorrect CAPTCHA.","CAPTCHA Incorrect."

@@ -80,6 +80,7 @@
 "Package","แพ็คเกจ"
 "Pagination","เลขหน้า"
 "Pagination Frame","เฟรมการแบ่งตัวเลขหน้า"
+"Please enter a number 0 or greater in this field.","โปรดป้อนตัวเลขที่มากกว่า 0 ในฟิลด์นี้"
 "Please enter a number greater than 0 in this field.","กรุณาใส่หมายเลขที่มากกว่า 0 ในฟิลด์นี้."
 "Please enter a valid $ amount. For example $100.00.","กรุณาใส่จำนวนเงิน $ ที่ถูกต้อง ตัวอย่างเช่น $100.00."
 "Please enter a valid URL. For example http://www.example.com or www.example.com","กรุณาใส่ URL ที่ถูกต้อง ตัวอย่างเช่น http://www.example.com หรือ www.example.com"

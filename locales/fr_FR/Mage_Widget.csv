@@ -1,4 +1,5 @@
 "-- Please Select --","-- Faites un choix --"
+"Actions","Action"
 "Add Layout Update","Ajouter une mise à jour d'agencement"
 "Add New Widget Instance","Ajouter une nouvelle instance de widget"
 "All","Tous"
@@ -48,6 +49,7 @@
 "This tab contains invalid data. Please solve the problem before saving.","Cet onglet contient des données non valides. Veuillez résoudre le problème avant de sauvegarder."
 "Thumbnail","Miniature"
 "Total %d records found","%d enregistrement(s) trouvé(s)"
+"Type","Type "
 "Unselect All","Désélectionner tout"
 "Unselect Visible","Désélectionner les éléments visibles"
 "View","Voir"

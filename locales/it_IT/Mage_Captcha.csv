@@ -5,6 +5,8 @@
 "Case Sensitive","Maiuscole/minuscole"
 "Displaying Mode","Modalità di visualizzazione"
 "Enable CAPTCHA in Admin","Abilita CAPTCHA in Admin"
+"Font","Carattere"
+"Forms","Moduli"
 "If 0 is specified, CAPTCHA on the Login form will be always available.","Se si specifica 0, il CAPTCHA nel form di accesso sarà sempre disponibile."
 "Incorrect CAPTCHA.","CAPTCHA errato."
 "Number of Symbols","Numero di simboli"

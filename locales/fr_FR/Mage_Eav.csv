@@ -47,6 +47,7 @@
 "Current module pathname is undefined","Le chemin d'accès actuel du module n'est pas défini"
 "Data integrity: No header row found for attribute","Intégrité des données : aucune ligne d'en-tête trouvée pour l'attribut."
 "Decimal Number","Nombre décimal"
+"Default Product Listing Sort by does not exist in Available Product Listing Sort By.","Le tri par défaut dans les listes de produits ne fait pas partie des options de tri disponibles."
 "Default Value","Valeur par défaut"
 "Default option value is not defined","La valeur par défaut de l'option n'est pas définie."
 "Delete","Supprimer"

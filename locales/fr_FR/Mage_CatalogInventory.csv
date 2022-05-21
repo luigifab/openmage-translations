@@ -31,6 +31,7 @@
 "Out of Stock","Rupture de stock"
 "Product Name","Nom du produit"
 "Product Stock Options","Options de stock de produits"
+"Products will still be shown by direct product URLs.","Les produits seront quand même affichés par leurs URLs directes."
 "Qty","Qté"
 "Qty Increments","Incréments de quantités"
 "Qty for Item's Status to Become Out of Stock","Qté pour que le statut du produit passe à épuisé"

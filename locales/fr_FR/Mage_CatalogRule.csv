@@ -1,4 +1,5 @@
 "%d Catalog Price Rules based on ""%s"" attribute have been disabled.","%d règles de prix catalogue basées sur l'attribut ""%s"" ont été désactivées."
+"Actions","Action"
 "Active","Actif"
 "Add New Rule","Ajouter une nouvelle règle"
 "An error occurred while deleting the rule. Please review the log and try again.","Erreur lors de la suppression de la règle. Vérifiez les logs et réessayez."
@@ -46,6 +47,7 @@
 "To Date","Date de fin"
 "To Fixed Amount","Nouveau prix en montant fixe"
 "To Percentage of the Original Price","Pourcentage du prix original"
+"Type","Type "
 "Unable to apply rules.","Impossible d'appliquer les règles."
 "Unable to find a rule to delete.","Impossible de trouver la règle à supprimer."
 "Update Prices Using the Following Information","Mettre à jour les prix en utilisant l'information suivante"
