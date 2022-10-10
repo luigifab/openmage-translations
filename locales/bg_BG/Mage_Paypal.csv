@@ -193,7 +193,7 @@
 "No Logo","Без лого"
 "No match","Няма съвпадения"
 "None of the address information matched","Нито една информация за адреса не съответства"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Забележете, че PayPal може да се справи до 10 доставка опции. Ето защо Magento ще прехвърли само първите 10 най-евтините опции за доставка, ако има повече от 10."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Забележете, че PayPal може да се справи до 10 доставка опции. Ето защо OpenMage ще прехвърли само първите 10 най-евтините опции за доставка, ако има повече от 10."
 "Now accepting PayPal (150 X 40)","Вече приема PayPal (150 X 40)"
 "Now accepting PayPal (150 X 60)","Вече приема PayPal (150 X 60)"
 "Number of Child Authorizations","Броят на разрешенията за дете"

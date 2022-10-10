@@ -56,7 +56,7 @@
 "Empty response","Réponse vide"
 "Enable Negotiated Rates","Activer les taux négociés"
 "Enabled for Checkout","Activé pour commander"
-"Enables/Disables SSL verification of Magento server by UPS.","Active/désactive la vérification SSL du server Magento par UPS."
+"Enables/Disables SSL verification of Magento server by UPS.","Active/désactive la vérification SSL du server OpenMage par UPS."
 "Error #%s : %s","Erreur n°%s : %s"
 "Error #%s : %s (%s)","Erreur n°%s : %s (%s)"
 "Error #%s: %s","Erreur n°%s : %s"

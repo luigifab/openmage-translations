@@ -218,7 +218,7 @@
 "No Logo","Logo bulunamadı"
 "No match","Eşleşme bulunamadı"
 "None of the address information matched","Herhangi bir adres eşleşmedi."
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Paypal, 10 adede kadar teslimat seçeneğini desteklemektedir. Eğer 10 taneden fazla teslimat seçeneği varsa Magento en ucuz ilk 10 tanesini gönderecektir."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Paypal, 10 adede kadar teslimat seçeneğini desteklemektedir. Eğer 10 taneden fazla teslimat seçeneği varsa OpenMage en ucuz ilk 10 tanesini gönderecektir."
 "Now accepting PayPal (150 X 40)","Şimdi PayPal ile Ödeme Alabilirsiniz (150 X 40)"
 "Now accepting PayPal (150 X 60)","Şimdi PayPal ile Ödeme Alabilirsiniz (150 X 60)"
 "Number of Child Authorizations","Alt Doğrulama Sayısı"

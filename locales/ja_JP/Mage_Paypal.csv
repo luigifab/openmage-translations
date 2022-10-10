@@ -222,7 +222,7 @@
 "No Logo","ロゴなし"
 "No match","合致するものなし"
 "None of the address information matched","合致する住所はありませんでした"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","PayPalは10までの配送オプションを取り扱うことができます。そのためMagentoはもし10以上の配送オプションがある場合に最初の最も安い10個のオプションをトランスファーします。"
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","PayPalは10までの配送オプションを取り扱うことができます。そのためOpenMageはもし10以上の配送オプションがある場合に最初の最も安い10個のオプションをトランスファーします。"
 "Now accepting PayPal (150 X 40)","PayPal使えます (150 X 40)"
 "Now accepting PayPal (150 X 60)","PayPal使えます (150 X 60)"
 "Number of Child Authorizations","子の認証の数"

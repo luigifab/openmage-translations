@@ -52,6 +52,7 @@
 "Entry with ID #%s not found.","Entrée non trouvée pour l'identifiant #%s"
 "Expiration Period","Période d'expiration"
 "Give the verifier code to application administrator","Donner le code de vérification à l'administrateur de l'application"
+"ID","Identifiant"
 "Invalid Callback URL","URL de rappel invalide"
 "Invalid ID parameter.","Paramètre identifiant invalide"
 "Invalid Rejected Callback URL","URL de rappel rejeté invalide"

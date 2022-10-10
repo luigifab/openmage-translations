@@ -217,7 +217,7 @@
 "No Logo","Nenhum Logotipo"
 "No match","Não corresponde"
 "None of the address information matched","Nenhuma das informações da morada foi verificada"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Note que o PayPal pode gerir até 10 opções de envio. Devido a isto, o Magento irá transferir apenas as 10 opções de envio mais baratas se existirem mais de 10."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Note que o PayPal pode gerir até 10 opções de envio. Devido a isto, o OpenMage irá transferir apenas as 10 opções de envio mais baratas se existirem mais de 10."
 "Now accepting PayPal (150 X 40)","Aceitamos PayPal (150 X 40)"
 "Now accepting PayPal (150 X 60)","Aceitamos PayPal (150 X 60)"
 "Number of Child Authorizations","Número de Autorizações Descententes"

@@ -218,7 +218,7 @@
 "No Logo","无标志"
 "No match","没有匹配"
 "None of the address information matched","没有匹配的地址信息"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","请注意，PayPal 可以处理达 10 送货选项。这就是为什么 Magento 将转移只有首先 10 最便宜的运输选项，如果超过 10。"
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","请注意，PayPal 可以处理达 10 送货选项。这就是为什么 OpenMage 将转移只有首先 10 最便宜的运输选项，如果超过 10。"
 "Now accepting PayPal (150 X 40)","现在接受支付宝（150×40）"
 "Now accepting PayPal (150 X 60)","现在接受支付宝（150×60）"
 "Number of Child Authorizations","孩子授权数量"

@@ -217,7 +217,7 @@
 "No Logo","Không có biểu tượng"
 "No match","Không phù hợp"
 "None of the address information matched","Không có thông tin địa chỉ phù hợp"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Chú ý rằng PayPal có thể xử lý lên đến 10 vận chuyển tùy chọn. Đó là lý do tại sao Magento sẽ chuyển tùy chọn vận chuyển với giá rẻ nhất chỉ có 10 lần đầu tiên nếu có nhiều hơn 10."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Chú ý rằng PayPal có thể xử lý lên đến 10 vận chuyển tùy chọn. Đó là lý do tại sao OpenMage sẽ chuyển tùy chọn vận chuyển với giá rẻ nhất chỉ có 10 lần đầu tiên nếu có nhiều hơn 10."
 "Now accepting PayPal (150 X 40)","Bây giờ chấp nhận PayPal (150 X 40)"
 "Now accepting PayPal (150 X 60)","Bây giờ chấp nhận PayPal (150 X 60)"
 "Number of Child Authorizations","Số lượng ủy quyền con"

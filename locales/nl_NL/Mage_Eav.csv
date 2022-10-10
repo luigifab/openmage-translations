@@ -44,7 +44,7 @@
 "None","Geen"
 "Not shared with other products","Niet gedeeld met andere producten"
 "Problem loading the collection, aborting. Error: %s","Probleem tijdens laden van de verzameling. Bezig met afbreken. Fout: %s"
-"Problem saving the collection, aborting. Error: %s","Probleem bij opslaan van verzameling. Magento sluit af. Fout: %s"
+"Problem saving the collection, aborting. Error: %s","Probleem bij opslaan van verzameling. OpenMage sluit af. Fout: %s"
 "Required","Vereist"
 "System","Systeem"
 "Text Area","Tekstgedeelte"

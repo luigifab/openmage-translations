@@ -205,7 +205,7 @@
 "No Logo","Tidak ada logo"
 "No match","Tidak cocok"
 "None of the address information matched","Tidak ada informasi alamat yang cocok"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Perhatikan bahwa PayPal dapat menangani hingga 10 opsi pengiriman. Itulah sebabnya Magento hanya akan mentransfer 10 opsi pengiriman termurah jika ada lebih dari 10 yang tersedia."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Perhatikan bahwa PayPal dapat menangani hingga 10 opsi pengiriman. Itulah sebabnya OpenMage hanya akan mentransfer 10 opsi pengiriman termurah jika ada lebih dari 10 yang tersedia."
 "Now accepting PayPal (150 X 40)","Sekarang menerima PayPal (150 X 40)"
 "Now accepting PayPal (150 X 60)","Sekarang menerima PayPal (150 X 60)"
 "Number of Child Authorizations","Jumlah Otorisasi Anak"

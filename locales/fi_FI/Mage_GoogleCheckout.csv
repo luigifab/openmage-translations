@@ -1,6 +1,7 @@
 "* Select shipping method","* Valitse toimitustapa"
 "2Day","2 päivää"
 "AVS Status: %s","Osoitteenvahvistuksen tila: %s"
+"Allowed Methods","Sallitut tavat"
 "Amount: %s","Summa: %s"
 "Auto-generated from GoogleCheckout Charge","Automaattisesti muodostettu GoogleCheckout-maksusta"
 "CC Partial: xxxx-%s","Luottokortin tunnusosa: xxxx-%s"

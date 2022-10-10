@@ -299,7 +299,7 @@
 "Not sure what PayPal payment method to use? Click <a href=""%s"" target=""_blank"">here</a> to learn more.","Sie wissen nicht, welche PayPal Zahlungsart Sie nutzen sollen? Klicken Sie <a href=""%s"" target=""_blank"">hier</a>, um mehr zu erfahren."
 "Note: %s","Bemerkung: %s"
 "Nothing to fetch because of an empty configuration.","Es konnten keine Daten abgeholten werden, da keine Konfiguration vorliegt."
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Beachten Sie, dass PayPal bis zu 10 Versandoptionen verarbeiten kann. Deshalb wird Magento die ersten 10 günstigsten Versandoptionen übertragen, wenn es mehr als 10 sind."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Beachten Sie, dass PayPal bis zu 10 Versandoptionen verarbeiten kann. Deshalb wird OpenMage die ersten 10 günstigsten Versandoptionen übertragen, wenn es mehr als 10 sind."
 "Notified customer about creditmemo #%s.","Kunde über Rechnungskorrektur Nr. %s informiert."
 "Notified customer about invoice #%s.","Kunde über Rechnung #%s informiert."
 "Now accepting PayPal (150 X 40)","Wir akzeptieren PayPal (150 x 40)"

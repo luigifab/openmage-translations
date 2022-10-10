@@ -283,7 +283,7 @@
 "Not sure what PayPal payment method to use? Click <a href=""%s"" target=""_blank"">here</a> to learn more.","Nu sunteți sigur ce metodă de plată PayPal să folosiți? Click <a href=""%s"" target=""_blank"">aici</a> pentru a afla mai multe."
 "Note: %s","Precizare: %s"
 "Nothing to fetch because of an empty configuration.","Nimic de obținut din cauza unei configurații goale."
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Observați că PayPal poate suporta până la 10 opțiuni de livrare. De aceea Magento va transfera numai cele mai ieftine 10 opțiuni de livrare, dacă există mai mult de 10 opțiuni disponibile."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Observați că PayPal poate suporta până la 10 opțiuni de livrare. De aceea OpenMage va transfera numai cele mai ieftine 10 opțiuni de livrare, dacă există mai mult de 10 opțiuni disponibile."
 "Notified customer about creditmemo #%s.","Client notificat despre memocredit #%s."
 "Notified customer about invoice #%s.","Client notificat despre factura #%s."
 "Now accepting PayPal (150 X 40)","Nu se acceptă PayPal (150 X 40)"

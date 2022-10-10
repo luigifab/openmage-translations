@@ -23,6 +23,7 @@
 "Invalid attribute requested: %s","Ogiltigt attribut har begärts: %s"
 "Invalid attribute type","Ogiltig attributtyp"
 "Invalid character encountered in increment ID: %s","Ogiltigt tecken har påträffats i uppräknat ID: %s"
+"Invalid date","Ogiltigt datum"
 "Invalid entity specified","Ogiltig entitet har angetts"
 "Invalid entity supplied: %s","Ogiltigt attribut har tillhandahållits: %s"
 "Invalid entity type","Ogiltig entitetstyp"

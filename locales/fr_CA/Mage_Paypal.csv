@@ -219,7 +219,7 @@
 "No Logo","Auncun Logo"
 "No match","Aucune correspondance"
 "None of the address information matched","Aucune correspondance trouvée dans l'adresse"
-"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","PayPal est capable de gérer jusqu'à 10 options de livraison. C'est pour cela que Magento transfèrera uniquement les 10 options de livraison les moins chères s'il y en a plus que 10."
+"Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","PayPal est capable de gérer jusqu'à 10 options de livraison. C'est pour cela que OpenMage transfèrera uniquement les 10 options de livraison les moins chères s'il y en a plus que 10."
 "Now accepting PayPal (150 X 40)","Nous acceptons désormais PayPal (150 X 40)"
 "Now accepting PayPal (150 X 60)","Nous acceptons désormais PayPal (150 X 60)"
 "Number of Child Authorizations","Nombre d'autorisations enfants"

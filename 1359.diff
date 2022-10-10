@@ -1,0 +1,1425 @@
+# https://github.com/OpenMage/magento-lts/pull/1359
+diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
+index 2b3b74121fb..bd505f36baa 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
++++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
+@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute extends Mage_Adminhtml_Bloc
+     public function __construct()
+     {
+         $this->_controller = 'catalog_product_attribute';
+-        $this->_headerText = Mage::helper('catalog')->__('Manage Attributes');
++        $this->_headerText = Mage::helper('catalog')->__('Attributes');
+         $this->_addButtonLabel = Mage::helper('catalog')->__('Add New Attribute');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
+index 7633a88ab3d..5a208a8d141 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
++++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
+@@ -47,8 +47,8 @@ protected function _beforeToHtml()
+         $model = Mage::registry('entity_attribute');
+ 
+         $this->addTab('labels', [
+-            'label'     => Mage::helper('catalog')->__('Manage Label / Options'),
+-            'title'     => Mage::helper('catalog')->__('Manage Label / Options'),
++            'label'     => Mage::helper('catalog')->__('Label / Options'),
++            'title'     => Mage::helper('catalog')->__('Label / Options'),
+             'content'   => $this->getLayout()->createBlock('adminhtml/catalog_product_attribute_edit_tab_options')->toHtml(),
+         ]);
+ 
+diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
+index 93b0bb6e570..84d4d0820b5 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
++++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
+@@ -60,7 +60,7 @@ protected function getNewButtonHtml()
+ 
+     protected function _getHeader()
+     {
+-        return Mage::helper('catalog')->__('Manage Attribute Sets');
++        return Mage::helper('catalog')->__('Attribute Sets');
+     }
+ 
+     protected function _toHtml()
+diff --git a/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php b/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
+index 90c64a5f215..7b952fc6805 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
++++ b/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
+@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Checkout_Agreement extends Mage_Adminhtml_Block_Widge
+     public function __construct()
+     {
+         $this->_controller      = 'checkout_agreement';
+-        $this->_headerText      = Mage::helper('checkout')->__('Manage Terms and Conditions');
++        $this->_headerText      = Mage::helper('checkout')->__('Terms and Conditions');
+         $this->_addButtonLabel  = Mage::helper('checkout')->__('Add New Condition');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/Cms/Page.php b/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
+index 48e72654934..422c2f20fcc 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
++++ b/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
+@@ -41,7 +41,7 @@ class Mage_Adminhtml_Block_Cms_Page extends Mage_Adminhtml_Block_Widget_Grid_Con
+     public function __construct()
+     {
+         $this->_controller = 'cms_page';
+-        $this->_headerText = Mage::helper('cms')->__('Manage Pages');
++        $this->_headerText = Mage::helper('cms')->__('Pages');
+ 
+         parent::__construct();
+ 
+diff --git a/app/code/core/Mage/Adminhtml/Block/Customer.php b/app/code/core/Mage/Adminhtml/Block/Customer.php
+index dd1b38c005a..72e6ccafdf6 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Customer.php
++++ b/app/code/core/Mage/Adminhtml/Block/Customer.php
+@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Customer extends Mage_Adminhtml_Block_Widget_Grid_Con
+     public function __construct()
+     {
+         $this->_controller = 'customer';
+-        $this->_headerText = Mage::helper('customer')->__('Manage Customers');
++        $this->_headerText = Mage::helper('customer')->__('Customers');
+         $this->_addButtonLabel = Mage::helper('customer')->__('Add New Customer');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php b/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
+index efa086717e4..a56886c0372 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
++++ b/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
+@@ -42,7 +42,7 @@ class Mage_Adminhtml_Block_Promo_Quote_Edit_Tab_Coupons
+      */
+     public function getTabLabel()
+     {
+-        return Mage::helper('salesrule')->__('Manage Coupon Codes');
++        return Mage::helper('salesrule')->__('Coupon Codes');
+     }
+ 
+     /**
+@@ -52,7 +52,7 @@ public function getTabLabel()
+      */
+     public function getTabTitle()
+     {
+-        return Mage::helper('salesrule')->__('Manage Coupon Codes');
++        return Mage::helper('salesrule')->__('Coupon Codes');
+     }
+ 
+     /**
+diff --git a/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php b/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
+index 1a9ed1869c6..2ed3fb8c49c 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
++++ b/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
+@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Rating_Rating extends Mage_Adminhtml_Block_Widget_Gri
+     public function __construct()
+     {
+         $this->_controller = 'rating';
+-        $this->_headerText = Mage::helper('rating')->__('Manage Ratings');
++        $this->_headerText = Mage::helper('rating')->__('Ratings');
+         $this->_addButtonLabel = Mage::helper('rating')->__('Add New Rating');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/System/Currency.php b/app/code/core/Mage/Adminhtml/Block/System/Currency.php
+index a027e719b91..3e41939c141 100644
+--- a/app/code/core/Mage/Adminhtml/Block/System/Currency.php
++++ b/app/code/core/Mage/Adminhtml/Block/System/Currency.php
+@@ -79,7 +79,7 @@ protected function _prepareLayout()
+ 
+     protected function getHeader()
+     {
+-        return Mage::helper('adminhtml')->__('Manage Currency Rates');
++        return Mage::helper('adminhtml')->__('Currency Rates');
+     }
+ 
+     protected function getSaveButtonHtml()
+diff --git a/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php b/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
+index b71560ffe3d..ee100f9db98 100644
+--- a/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
++++ b/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
+@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_System_Store_Store extends Mage_Adminhtml_Block_Widge
+     public function __construct()
+     {
+         $this->_controller  = 'system_store';
+-        $this->_headerText  = Mage::helper('adminhtml')->__('Manage Stores');
++        $this->_headerText  = Mage::helper('adminhtml')->__('Stores');
+         $this->setTemplate('system/store/container.phtml');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php b/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
+index b2fda941fa2..9d5f40174dc 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
++++ b/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
+@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Tag_Tag extends Mage_Adminhtml_Block_Widget_Grid_Cont
+     public function __construct()
+     {
+         $this->_controller = 'tag_tag';
+-        $this->_headerText = Mage::helper('tag')->__('Manage Tags');
++        $this->_headerText = Mage::helper('tag')->__('Tags');
+         $this->_addButtonLabel = Mage::helper('tag')->__('Add New Tag');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php b/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
+index f91767161a9..5941c89b0aa 100644
+--- a/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
++++ b/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
+@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Tax_Rule extends Mage_Adminhtml_Block_Widget_Grid_Con
+     public function __construct()
+     {
+         $this->_controller      = 'tax_rule';
+-        $this->_headerText      = Mage::helper('tax')->__('Manage Tax Rules');
++        $this->_headerText      = Mage::helper('tax')->__('Tax Rules');
+         $this->_addButtonLabel  = Mage::helper('tax')->__('Add New Tax Rule');
+         parent::__construct();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php b/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
+index 8d3126ebb09..69508ce53b0 100644
+--- a/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
++++ b/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
+@@ -135,7 +135,7 @@ abstract class Mage_Adminhtml_Helper_Help_Mapping extends Mage_Core_Helper_Abstr
+             /* System → Import/Export */
+             'system_convert_gui' => 'store-operations/dataflow.html',
+             'system_convert_profile' => 'store-operations/dataflow.html',
+-            /* System → Manage Currency */
++            /* System → Currency */
+             'system_currency' => 'store-operations/currency-rates.html',
+             'system_currencysymbol' => 'store-operations/currency-symbols.html',
+             /* System → Transactional emails */
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
+index 34dee0d26ef..91455fae5a1 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
+@@ -43,8 +43,7 @@ class Mage_Adminhtml_Catalog_CategoryController extends Mage_Adminhtml_Controlle
+     protected function _initCategory($getRootInstead = false)
+     {
+         $this->_title($this->__('Catalog'))
+-             ->_title($this->__('Categories'))
+-             ->_title($this->__('Manage Categories'));
++             ->_title($this->__('Categories'));
+ 
+         $categoryId = (int) $this->getRequest()->getParam('id',false);
+         $storeId    = (int) $this->getRequest()->getParam('store');
+@@ -203,8 +202,8 @@ public function editAction()
+         $this->getLayout()->getBlock('head')->setCanLoadExtJs(true)
+             ->setContainerCssClass('catalog-categories');
+ 
+-        $this->_addBreadcrumb(Mage::helper('catalog')->__('Manage Catalog Categories'),
+-             Mage::helper('catalog')->__('Manage Categories')
++        $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog Categories'),
++             Mage::helper('catalog')->__('Categories')
+         );
+ 
+         $block = $this->getLayout()->getBlock('catalog.wysiwyg.js');
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
+index 8cb73a0ff8b..dda812c10cd 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
+@@ -63,7 +63,7 @@ protected function _initAction()
+     {
+         $this->_title($this->__('Catalog'))
+              ->_title($this->__('Attributes'))
+-             ->_title($this->__('Manage Attributes'));
++             ->_title($this->__('Attributes'));
+ 
+         if($this->getRequest()->getParam('popup')) {
+             $this->loadLayout('popup');
+@@ -72,8 +72,8 @@ protected function _initAction()
+                 ->_setActiveMenu('catalog/attributes')
+                 ->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'))
+                 ->_addBreadcrumb(
+-                    Mage::helper('catalog')->__('Manage Product Attributes'),
+-                    Mage::helper('catalog')->__('Manage Product Attributes'))
++                    Mage::helper('catalog')->__('Product Attributes'),
++                    Mage::helper('catalog')->__('Product Attributes'))
+             ;
+         }
+         return $this;
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
+index dbee5d54665..46b40f14a1d 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
+@@ -38,7 +38,7 @@ public function indexAction()
+     {
+         $this->_title($this->__('Catalog'))
+              ->_title($this->__('Attributes'))
+-             ->_title($this->__('Manage Attribute Sets'));
++             ->_title($this->__('Attribute Sets'));
+ 
+         $this->_setTypeId();
+ 
+@@ -47,8 +47,8 @@ public function indexAction()
+ 
+         $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'));
+         $this->_addBreadcrumb(
+-            Mage::helper('catalog')->__('Manage Attribute Sets'),
+-            Mage::helper('catalog')->__('Manage Attribute Sets'));
++            Mage::helper('catalog')->__('Attribute Sets'),
++            Mage::helper('catalog')->__('Attribute Sets'));
+ 
+         $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_toolbar_main'));
+         $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_grid'));
+@@ -60,7 +60,7 @@ public function editAction()
+     {
+         $this->_title($this->__('Catalog'))
+              ->_title($this->__('Attributes'))
+-             ->_title($this->__('Manage Attribute Sets'));
++             ->_title($this->__('Attribute Sets'));
+ 
+         $this->_setTypeId();
+         $attributeSet = Mage::getModel('eav/entity_attribute_set')
+@@ -81,8 +81,8 @@ public function editAction()
+ 
+         $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'));
+         $this->_addBreadcrumb(
+-            Mage::helper('catalog')->__('Manage Product Sets'),
+-            Mage::helper('catalog')->__('Manage Product Sets'));
++            Mage::helper('catalog')->__('Product Sets'),
++            Mage::helper('catalog')->__('Product Sets'));
+ 
+         $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_main'));
+ 
+@@ -179,7 +179,7 @@ public function addAction()
+     {
+         $this->_title($this->__('Catalog'))
+              ->_title($this->__('Attributes'))
+-             ->_title($this->__('Manage Attribute Sets'))
++             ->_title($this->__('Attribute Sets'))
+              ->_title($this->__('New Set'));
+ 
+         $this->_setTypeId();
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
+index 71b2a5e1acd..b007e4d88bb 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
+@@ -70,7 +70,7 @@ protected function _construct()
+     protected function _initProduct()
+     {
+         $this->_title($this->__('Catalog'))
+-             ->_title($this->__('Manage Products'));
++             ->_title($this->__('Products'));
+ 
+         $productId  = (int) $this->getRequest()->getParam('id');
+         $product    = Mage::getModel('catalog/product')
+@@ -185,7 +185,7 @@ protected function _outputBlocks()
+     public function indexAction()
+     {
+         $this->_title($this->__('Catalog'))
+-             ->_title($this->__('Manage Products'));
++             ->_title($this->__('Products'));
+ 
+         $this->loadLayout();
+         $this->renderLayout();
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php b/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
+index 32da47da655..493b3ecccb5 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
+@@ -46,7 +46,7 @@ protected function _initAction()
+         $this->loadLayout()
+             ->_setActiveMenu('cms/page')
+             ->_addBreadcrumb(Mage::helper('cms')->__('CMS'), Mage::helper('cms')->__('CMS'))
+-            ->_addBreadcrumb(Mage::helper('cms')->__('Manage Pages'), Mage::helper('cms')->__('Manage Pages'))
++            ->_addBreadcrumb(Mage::helper('cms')->__('Pages'), Mage::helper('cms')->__('Pages'))
+         ;
+         return $this;
+     }
+@@ -58,7 +58,7 @@ public function indexAction()
+     {
+         $this->_title($this->__('CMS'))
+              ->_title($this->__('Pages'))
+-             ->_title($this->__('Manage Content'));
++             ->_title($this->__('Content'));
+ 
+         $this->_initAction();
+         $this->renderLayout();
+@@ -80,7 +80,7 @@ public function editAction()
+     {
+         $this->_title($this->__('CMS'))
+              ->_title($this->__('Pages'))
+-             ->_title($this->__('Manage Content'));
++             ->_title($this->__('Content'));
+ 
+         // 1. Get ID and create model
+         $id = $this->getRequest()->getParam('page_id');
+diff --git a/app/code/core/Mage/Adminhtml/controllers/CustomerController.php b/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
+index 1aa87188f11..9dbac1e5244 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
+@@ -46,7 +46,7 @@ public function preDispatch()
+      */
+     protected function _initCustomer($idFieldName = 'id')
+     {
+-        $this->_title($this->__('Customers'))->_title($this->__('Manage Customers'));
++        $this->_title($this->__('Customers'))->_title($this->__('Customers'));
+ 
+         $customerId = (int) $this->getRequest()->getParam($idFieldName);
+         $customer = Mage::getModel('customer/customer');
+@@ -64,7 +64,7 @@ protected function _initCustomer($idFieldName = 'id')
+      */
+     public function indexAction()
+     {
+-        $this->_title($this->__('Customers'))->_title($this->__('Manage Customers'));
++        $this->_title($this->__('Customers'))->_title($this->__('Customers'));
+ 
+         if ($this->getRequest()->getQuery('ajax')) {
+             $this->_forward('grid');
+@@ -88,7 +88,6 @@ public function indexAction()
+          * Add breadcrumb item
+          */
+         $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Customers'), Mage::helper('adminhtml')->__('Customers'));
+-        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Customers'), Mage::helper('adminhtml')->__('Manage Customers'));
+ 
+         $this->renderLayout();
+     }
+diff --git a/app/code/core/Mage/Adminhtml/controllers/RatingController.php b/app/code/core/Mage/Adminhtml/controllers/RatingController.php
+index 388b1340fcf..a3e9eb34838 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/RatingController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/RatingController.php
+@@ -40,7 +40,7 @@ public function indexAction()
+         $this->loadLayout();
+ 
+         $this->_setActiveMenu('catalog/ratings');
+-        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Ratings'), Mage::helper('adminhtml')->__('Manage Ratings'));
++        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Ratings'), Mage::helper('adminhtml')->__('Ratings'));
+         $this->_addContent($this->getLayout()->createBlock('adminhtml/rating_rating'));
+ 
+         $this->renderLayout();
+@@ -59,7 +59,7 @@ public function editAction()
+         $this->_title($ratingModel->getId() ? $ratingModel->getRatingCode() : $this->__('New Rating'));
+ 
+         $this->_setActiveMenu('catalog/ratings');
+-        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Ratings'), Mage::helper('adminhtml')->__('Manage Ratings'));
++        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Ratings'), Mage::helper('adminhtml')->__('Ratings'));
+ 
+         $this->_addContent($this->getLayout()->createBlock('adminhtml/rating_edit'))
+             ->_addLeft($this->getLayout()->createBlock('adminhtml/rating_edit_tabs'));
+@@ -149,7 +149,7 @@ protected function _initEnityId()
+     {
+         $this->_title($this->__('Catalog'))
+              ->_title($this->__('Reviews and Ratings'))
+-             ->_title($this->__('Manage Ratings'));
++             ->_title($this->__('Ratings'));
+ 
+         Mage::register('entityId', Mage::getModel('rating/rating_entity')->getIdByCode('product'));
+     }
+diff --git a/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php b/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
+index ecd09a747aa..241540bb95c 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
+@@ -53,7 +53,7 @@ protected function _initCurrency()
+      */
+     public function indexAction()
+     {
+-        $this->_title($this->__('System'))->_title($this->__('Manage Currency Rates'));
++        $this->_title($this->__('System'))->_title($this->__('Currency Rates'));
+ 
+         $this->loadLayout();
+         $this->_setActiveMenu('system/currency');
+diff --git a/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php b/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
+index 684f38e23c2..e7f0ca6965b 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
+@@ -55,7 +55,7 @@ protected function _initAction()
+         $this->loadLayout()
+             ->_setActiveMenu('system/store')
+             ->_addBreadcrumb(Mage::helper('adminhtml')->__('System'), Mage::helper('adminhtml')->__('System'))
+-            ->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Stores'), Mage::helper('adminhtml')->__('Manage Stores'))
++            ->_addBreadcrumb(Mage::helper('adminhtml')->__('Stores'), Mage::helper('adminhtml')->__('Stores'))
+         ;
+         return $this;
+     }
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
+index dd18a77a8b1..a8ece8a459e 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
+@@ -170,7 +170,7 @@ protected function _initAction()
+             ->_setActiveMenu('sales/tax/tax_class_customer')
+             ->_addBreadcrumb(Mage::helper('tax')->__('Sales'), Mage::helper('tax')->__('Sales'))
+             ->_addBreadcrumb(Mage::helper('tax')->__('Tax'), Mage::helper('tax')->__('Tax'))
+-            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Customer Tax Classes'), Mage::helper('tax')->__('Manage Customer Tax Classes'))
++            ->_addBreadcrumb(Mage::helper('tax')->__('Customer Tax Classes'), Mage::helper('tax')->__('Customer Tax Classes'))
+         ;
+         return $this;
+     }
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
+index 28d88f937a1..85d60a116cf 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
+@@ -169,7 +169,7 @@ protected function _initAction()
+             ->_setActiveMenu('sales/tax/tax_class_product')
+             ->_addBreadcrumb(Mage::helper('tax')->__('Sales'), Mage::helper('tax')->__('Sales'))
+             ->_addBreadcrumb(Mage::helper('tax')->__('Tax'), Mage::helper('tax')->__('Tax'))
+-            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Product Tax Classes'), Mage::helper('tax')->__('Manage Product Tax Classes'))
++            ->_addBreadcrumb(Mage::helper('tax')->__('Product Tax Classes'), Mage::helper('tax')->__('Product Tax Classes'))
+         ;
+         return $this;
+     }
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
+index f2b94b636dc..4a2c99287ba 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
+@@ -42,16 +42,16 @@ public function indexAction()
+     {
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Zones and Rates'));
++             ->_title($this->__('Tax Zones and Rates'));
+ 
+         /** @var Mage_Adminhtml_Block_Tax_Rate_Toolbar_Add $block */
+         $block = $this->getLayout()->createBlock('adminhtml/tax_rate_toolbar_add', 'tax_rate_toolbar');
+         $this->_initAction()
+-            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Tax Rates'), Mage::helper('tax')->__('Manage Tax Rates'))
++            ->_addBreadcrumb(Mage::helper('tax')->__('Tax Rates'), Mage::helper('tax')->__('Tax Rates'))
+             ->_addContent(
+                 $block
+                     ->assign('createUrl', $this->getUrl('*/tax_rate/add'))
+-                    ->assign('header', Mage::helper('tax')->__('Manage Tax Rates'))
++                    ->assign('header', Mage::helper('tax')->__('Tax Rates'))
+             )
+             ->_addContent($this->getLayout()->createBlock('adminhtml/tax_rate_grid', 'tax_rate_grid'))
+             ->renderLayout();
+@@ -65,7 +65,7 @@ public function addAction()
+ 
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Zones and Rates'));
++             ->_title($this->__('Tax Zones and Rates'));
+ 
+         $this->_title($this->__('New Rate'));
+ 
+@@ -76,7 +76,7 @@ public function addAction()
+         /** @var Mage_Adminhtml_Block_Tax_Rate_Toolbar_Save $block */
+         $block = $this->getLayout()->createBlock('adminhtml/tax_rate_toolbar_save');
+         $this->_initAction()
+-            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Tax Rates'), Mage::helper('tax')->__('Manage Tax Rates'), $this->getUrl('*/tax_rate'))
++            ->_addBreadcrumb(Mage::helper('tax')->__('Tax Rates'), Mage::helper('tax')->__('Tax Rates'), $this->getUrl('*/tax_rate'))
+             ->_addBreadcrumb(Mage::helper('tax')->__('New Tax Rate'), Mage::helper('tax')->__('New Tax Rate'))
+             ->_addContent(
+                 $block
+@@ -132,7 +132,7 @@ public function editAction()
+     {
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Zones and Rates'));
++             ->_title($this->__('Tax Zones and Rates'));
+ 
+         $rateId = (int)$this->getRequest()->getParam('rate');
+         $rateModel = Mage::getSingleton('tax/calculation_rate')->load(null);
+@@ -153,7 +153,7 @@ public function editAction()
+         /** @var Mage_Adminhtml_Block_Tax_Rate_Toolbar_Save $block */
+         $block = $this->getLayout()->createBlock('adminhtml/tax_rate_toolbar_save');
+         $this->_initAction()
+-            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Tax Rates'), Mage::helper('tax')->__('Manage Tax Rates'), $this->getUrl('*/tax_rate'))
++            ->_addBreadcrumb(Mage::helper('tax')->__('Tax Rates'), Mage::helper('tax')->__('Tax Rates'), $this->getUrl('*/tax_rate'))
+             ->_addBreadcrumb(Mage::helper('tax')->__('Edit Tax Rate'), Mage::helper('tax')->__('Edit Tax Rate'))
+             ->_addContent(
+                 $block
+@@ -246,7 +246,7 @@ public function importExportAction()
+     {
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Zones and Rates'));
++             ->_title($this->__('Tax Zones and Rates'));
+ 
+         $this->_title($this->__('Import and Export Tax Rates'));
+ 
+diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
+index 828db5c956d..a1af1969e69 100644
+--- a/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
++++ b/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
+@@ -42,7 +42,7 @@ public function indexAction()
+     {
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Rules'));
++             ->_title($this->__('Tax Rules'));
+ 
+         $this->_initAction()
+             ->_addContent($this->getLayout()->createBlock('adminhtml/tax_rule'))
+@@ -65,7 +65,7 @@ public function editAction()
+     {
+         $this->_title($this->__('Sales'))
+              ->_title($this->__('Tax'))
+-             ->_title($this->__('Manage Tax Rules'));
++             ->_title($this->__('Tax Rules'));
+ 
+         $taxRuleId  = $this->getRequest()->getParam('rule');
+         $ruleModel  = Mage::getModel('tax/calculation_rule');
+diff --git a/app/code/core/Mage/Adminhtml/etc/adminhtml.xml b/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
+index e7b78e113b4..79443db233c 100644
+--- a/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
++++ b/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
+@@ -68,7 +68,7 @@
+                     </children>
+                 </convert>
+                 <currency translate="title">
+-                    <title>Manage Currency Rates</title>
++                    <title>Currency Rates</title>
+                     <action>adminhtml/system_currency</action>
+                     <sort_order>50</sort_order>
+                 </currency>
+@@ -110,7 +110,7 @@
+                     <sort_order>90</sort_order>
+                 </cache>
+                 <store translate="title" module="core">
+-                    <title>Manage Stores</title>
++                    <title>Stores</title>
+                     <action>adminhtml/system_store/</action>
+                     <sort_order>100</sort_order>
+                 </store>
+@@ -159,7 +159,7 @@
+                                 </children>
+                             </acl>
+                             <store translate="title">
+-                                <title>Manage Stores</title>
++                                <title>Stores</title>
+                             </store>
+                             <design translate="title">
+                                 <title>Design</title>
+@@ -212,7 +212,7 @@
+                                 </children>
+                             </config>
+                             <currency translate="title">
+-                                <title>Manage Currency Rates</title>
++                                <title>Currency Rates</title>
+                                 <sort_order>30</sort_order>
+                             </currency>
+                             <email_template translate="title">
+diff --git a/app/code/core/Mage/Catalog/etc/adminhtml.xml b/app/code/core/Mage/Catalog/etc/adminhtml.xml
+index 51432d7310c..a33dd27e506 100644
+--- a/app/code/core/Mage/Catalog/etc/adminhtml.xml
++++ b/app/code/core/Mage/Catalog/etc/adminhtml.xml
+@@ -36,12 +36,12 @@
+             </depends>
+             <children>
+                 <products translate="title" module="catalog">
+-                    <title>Manage Products</title>
++                    <title>Products</title>
+                     <action>adminhtml/catalog_product/</action>
+                     <sort_order>0</sort_order>
+                 </products>
+                 <categories translate="title" module="catalog">
+-                    <title>Manage Categories</title>
++                    <title>Categories</title>
+                     <action>adminhtml/catalog_category/</action>
+                     <sort_order>10</sort_order>
+                 </categories>
+@@ -49,11 +49,11 @@
+                     <title>Attributes</title>
+                     <children>
+                         <attributes translate="title" module="catalog">
+-                            <title>Manage Attributes</title>
++                            <title>Attributes</title>
+                             <action>adminhtml/catalog_product_attribute/</action>
+                         </attributes>
+                         <sets translate="title" module="catalog">
+-                            <title>Manage Attribute Sets</title>
++                            <title>Attribute Sets</title>
+                             <action>adminhtml/catalog_product_set/</action>
+                         </sets>
+                     </children>
+@@ -90,18 +90,18 @@
+                                 <title>Attributes</title>
+                                 <children>
+                                     <attributes translate="title">
+-                                        <title>Manage Attributes</title>
++                                        <title>Attributes</title>
+                                     </attributes>
+                                     <sets translate="title">
+-                                        <title>Manage Attribute Sets</title>
++                                        <title>Attribute Sets</title>
+                                     </sets>
+                                 </children>
+                             </attributes>
+                             <categories translate="title">
+-                                <title>Manage Categories</title>
++                                <title>Categories</title>
+                             </categories>
+                             <products translate="title">
+-                                <title>Manage Products</title>
++                                <title>Products</title>
+                             </products>
+                             <update_attributes translate="title">
+                                 <title>Update Attributes</title>
+diff --git a/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php b/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
+index 52e3d486eb1..25388125095 100644
+--- a/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
++++ b/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
+@@ -74,7 +74,7 @@ protected function _prepareLayout()
+      */
+     public function getHeader()
+     {
+-        return Mage::helper('adminhtml')->__('Manage Currency Symbols');
++        return Mage::helper('adminhtml')->__('Currency Symbols');
+     }
+ 
+     /**
+diff --git a/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php b/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
+index 07ada9586e3..8dacefdcde6 100644
+--- a/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
++++ b/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
+@@ -46,12 +46,12 @@ public function indexAction()
+                 Mage::helper('currencysymbol')->__('System')
+             )
+             ->_addBreadcrumb(
+-                Mage::helper('currencysymbol')->__('Manage Currency Rates'),
+-                Mage::helper('currencysymbol')->__('Manage Currency Rates')
++                Mage::helper('currencysymbol')->__('Currency Rates'),
++                Mage::helper('currencysymbol')->__('Currency Rates')
+             );
+ 
+         $this->_title($this->__('System'))
+-            ->_title($this->__('Manage Currency Rates'));
++            ->_title($this->__('Currency Rates'));
+         $this->renderLayout();
+     }
+ 
+diff --git a/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml b/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
+index a06feb4951b..81d4f07ad7f 100644
+--- a/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
++++ b/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
+@@ -30,7 +30,7 @@
+         <system>
+             <children>
+                 <currency translate="title" module="currencysymbol">
+-                    <title>Manage Currency</title>
++                    <title>Currency</title>
+                     <children>
+                         <rates translate="title">
+                             <title>Rates</title>
+@@ -55,7 +55,7 @@
+                     <system>
+                         <children>
+                             <currency translate="title">
+-                                <title>Manage Currency</title>
++                                <title>Currency</title>
+                                 <children>
+                                     <rates translate="title">
+                                         <title>Rates</title>
+diff --git a/app/code/core/Mage/Customer/etc/adminhtml.xml b/app/code/core/Mage/Customer/etc/adminhtml.xml
+index 5faae9fd604..78205ae6b51 100644
+--- a/app/code/core/Mage/Customer/etc/adminhtml.xml
++++ b/app/code/core/Mage/Customer/etc/adminhtml.xml
+@@ -33,7 +33,7 @@
+             <!-- action>adminhtml/customer/</action -->
+             <children>
+                 <manage translate="title" module="customer">
+-                    <title>Manage Customers</title>
++                    <title>Customers</title>
+                     <action>adminhtml/customer/</action>
+                     <sort_order>0</sort_order>
+                 </manage>
+@@ -63,7 +63,7 @@
+                                 <sort_order>10</sort_order>
+                             </group>
+                             <manage translate="title">
+-                                <title>Manage Customers</title>
++                                <title>Customers</title>
+                                 <sort_order>0</sort_order>
+                             </manage>
+                             <online translate="title">
+diff --git a/app/code/core/Mage/Rating/etc/adminhtml.xml b/app/code/core/Mage/Rating/etc/adminhtml.xml
+index 15ba79e59bd..ed7bded6779 100644
+--- a/app/code/core/Mage/Rating/etc/adminhtml.xml
++++ b/app/code/core/Mage/Rating/etc/adminhtml.xml
+@@ -35,7 +35,7 @@
+                             <reviews_ratings>
+                                 <children>
+                                     <ratings translate="title" module="rating">
+-                                        <title>Manage Ratings</title>
++                                        <title>Ratings</title>
+                                     </ratings>
+                                  </children>
+                             </reviews_ratings>
+diff --git a/app/code/core/Mage/Review/etc/adminhtml.xml b/app/code/core/Mage/Review/etc/adminhtml.xml
+index 7a77561ef45..c81bf457f9d 100644
+--- a/app/code/core/Mage/Review/etc/adminhtml.xml
++++ b/app/code/core/Mage/Review/etc/adminhtml.xml
+@@ -46,7 +46,7 @@
+                             </children>
+                         </reviews>
+                         <ratings translate="title" module="review">
+-                            <title>Manage Ratings</title>
++                            <title>Ratings</title>
+                             <action>adminhtml/rating/</action>
+                         </ratings>
+                     </children>
+diff --git a/app/code/core/Mage/Tax/etc/adminhtml.xml b/app/code/core/Mage/Tax/etc/adminhtml.xml
+index c4672eb5923..128103fee27 100644
+--- a/app/code/core/Mage/Tax/etc/adminhtml.xml
++++ b/app/code/core/Mage/Tax/etc/adminhtml.xml
+@@ -34,11 +34,11 @@
+                     <sort_order>500</sort_order>
+                     <children>
+                         <rules translate="title" module="tax">
+-                            <title>Manage Tax Rules</title>
++                            <title>Tax Rules</title>
+                             <action>adminhtml/tax_rule</action>
+                         </rules>
+                         <rates translate="title" module="tax">
+-                            <title>Manage Tax Zones &amp; Rates</title>
++                            <title>Tax Zones &amp; Rates</title>
+                             <action>adminhtml/tax_rate</action>
+                         </rates>
+                         <import_export translate="title" module="tax">
+@@ -81,11 +81,11 @@
+                                         <sort_order>20</sort_order>
+                                     </import_export>
+                                     <rates translate="title">
+-                                        <title>Manage Tax Zones &amp; Rates</title>
++                                        <title>Tax Zones &amp; Rates</title>
+                                         <sort_order>30</sort_order>
+                                     </rates>
+                                     <rules translate="title">
+-                                        <title>Manage Tax Rules</title>
++                                        <title>Tax Rules</title>
+                                         <sort_order>40</sort_order>
+                                     </rules>
+                                 </children>
+diff --git a/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php b/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
+index eac153235e5..bceb5e173c9 100644
+--- a/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
++++ b/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
+@@ -40,7 +40,7 @@ public function __construct()
+     {
+         $this->_blockGroup = 'widget';
+         $this->_controller = 'adminhtml_widget_instance';
+-        $this->_headerText = Mage::helper('widget')->__('Manage Widget Instances');
++        $this->_headerText = Mage::helper('widget')->__('Widget Instances');
+         parent::__construct();
+         $this->_updateButton('add', 'label', Mage::helper('widget')->__('Add New Widget Instance'));
+     }
+diff --git a/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php b/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
+index 784a1b3b3d4..03c5eee8b16 100644
+--- a/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
++++ b/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
+@@ -57,8 +57,8 @@ protected function _initAction()
+                 Mage::helper('widget')->__('CMS')
+             )
+             ->_addBreadcrumb(
+-                Mage::helper('widget')->__('Manage Widget Instances'),
+-                Mage::helper('widget')->__('Manage Widget Instances')
++                Mage::helper('widget')->__('Widget Instances'),
++                Mage::helper('widget')->__('Widget Instances')
+             );
+         return $this;
+     }
+diff --git a/app/design/adminhtml/default/default/locale/en_US/translate.csv b/app/design/adminhtml/default/default/locale/en_US/translate.csv
+index 05cf0012840..b7852050e78 100644
+--- a/app/design/adminhtml/default/default/locale/en_US/translate.csv
++++ b/app/design/adminhtml/default/default/locale/en_US/translate.csv
+@@ -64,7 +64,7 @@
+ "Option","Option"
+ "Primary Billing Address","Primary Billing Address"
+ "Create Backup","Create Backup"
+-"Manage Options (values for your attribute)","Manage Options (values for your attribute)"
++"Options (values for your attribute)","Options (values for your attribute)"
+ "Total Due","Total Due"
+ "Copyright 2007","Copyright 2007"
+ "Newsletter Subscribers","Newsletter Subscribers"
+@@ -188,7 +188,7 @@
+ "Add New Address","Add New Address"
+ "Account Created in:","Account Created in:"
+ "Default Billing","Default Billing"
+-"Manage Titles (Size, Color, etc.)","Manage Titles (Size, Color, etc.)"
++"Titles (Size, Color, etc.)","Titles (Size, Color, etc.)"
+ "Please confirm site switching. All data not saved will be lost.","Please confirm site switching. All data not saved will be lost."
+ "Please select from each ratings above","Please select from each ratings above"
+ "Qty Shipped","Qty Shipped"
+diff --git a/app/design/adminhtml/default/default/template/catalog/product.phtml b/app/design/adminhtml/default/default/template/catalog/product.phtml
+index 0caf2b5d04c..e358e7c7e98 100644
+--- a/app/design/adminhtml/default/default/template/catalog/product.phtml
++++ b/app/design/adminhtml/default/default/template/catalog/product.phtml
+@@ -32,7 +32,7 @@
+ <div class="content-header">
+ <table cellspacing="0">
+     <tr>
+-        <td style="width:50%;"><h3 class="icon-head head-products"><?php echo Mage::helper('catalog')->__('Manage Products') ?></h3></td>
++        <td style="width:50%;"><h3 class="icon-head head-products"><?php echo Mage::helper('catalog')->__('Products') ?></h3></td>
+         <td class="a-right">
+             <?php echo $this->getButtonsHtml() ?>
+         </td>
+diff --git a/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml b/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
+index 65c5a3937b1..ed326faa6d9 100644
+--- a/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
++++ b/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
+@@ -44,7 +44,7 @@
+ 
+ <div class="entity-edit">
+     <div class="entry-edit-head">
+-        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Manage Titles (Size, Color, etc.)') ?></h4>
++        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Titles (Size, Color, etc.)') ?></h4>
+     </div>
+     <div class="box">
+             <div class="hor-scroll">
+@@ -69,7 +69,7 @@
+ <br/>
+ <div class="entity-edit" id="matage-options-panel">
+     <div class="entry-edit-head">
+-    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Manage Options (values of your attribute)') ?></h4>
++    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Options (values of your attribute)') ?></h4>
+     </div>
+     <div class="box">
+         <div class="hor-scroll">
+diff --git a/app/design/adminhtml/default/default/template/eav/attribute/options.phtml b/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
+index f46541a92d4..774c1c518ea 100644
+--- a/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
++++ b/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
+@@ -44,7 +44,7 @@
+ 
+ <div class="entity-edit">
+     <div class="entry-edit-head">
+-        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Manage Titles (Size, Color, etc.)') ?></h4>
++        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Titles (Size, Color, etc.)') ?></h4>
+     </div>
+     <div class="box">
+             <div class="hor-scroll">
+@@ -69,7 +69,7 @@
+ <br/>
+ <div class="entity-edit" id="matage-options-panel">
+     <div class="entry-edit-head">
+-    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Manage Options (values of your attribute)') ?></h4>
++    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Options (values of your attribute)') ?></h4>
+     </div>
+     <div class="box">
+         <div class="hor-scroll">
+diff --git a/app/design/adminhtml/default/default/template/system/config/switcher.phtml b/app/design/adminhtml/default/default/template/system/config/switcher.phtml
+index 381a0d7a711..abeac74c3ca 100644
+--- a/app/design/adminhtml/default/default/template/system/config/switcher.phtml
++++ b/app/design/adminhtml/default/default/template/system/config/switcher.phtml
+@@ -44,7 +44,7 @@
+     </select>
+     <?php if (Mage::getSingleton('admin/session')->isAllowed('system/store')): ?>
+     <p style="margin:10px 0 0;">
+-        <a href="<?php echo $this->getUrl('*/system_store') ?>"><?php echo $this->__('Manage Stores') ?></a>
++        <a href="<?php echo $this->getUrl('*/system_store') ?>"><?php echo $this->__('Stores') ?></a>
+     </p>
+     <?php endif ?>
+ </div>
+diff --git a/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml b/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
+index 791dc9ea61e..6a8f69cf083 100644
+--- a/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
++++ b/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
+@@ -28,7 +28,7 @@
+     <div class="box">
+         <div class="box-title">
+             <h3><?php echo $this->__('Address Book') ?></h3>
+-            <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Manage Addresses') ?></a>
++            <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Addresses') ?></a>
+         </div>
+         <div class="box-content">
+             <div class="col-1">
+diff --git a/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml b/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
+index 3b80fee4050..9dba431111e 100644
+--- a/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
++++ b/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
+@@ -25,7 +25,7 @@
+  */
+ ?>
+ <div class="col2-set">
+-    <h2 class="sub-title"><?php echo $this->__('Address Book') ?> <span class="separator">|</span> <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Manage Addresses') ?></a></h2>
++    <h2 class="sub-title"><?php echo $this->__('Address Book') ?> <span class="separator">|</span> <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Addresses') ?></a></h2>
+     <div class="col-1">
+         <div class="info-box">
+             <h3 class="box-title"><?php echo $this->__('Default Billing Address') ?> <span class="separator">|</span> <a href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>"><?php echo $this->__('Edit') ?></a></h3>
+diff --git a/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml b/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
+index 2956c1f22c0..276570c9bc5 100644
+--- a/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
++++ b/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
+@@ -27,7 +27,7 @@
+ <div class="box-account box-info">
+     <div class="box-head">
+         <h2><?php echo $this->__('Address Book') ?></h2>
+-        <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Manage Addresses') ?></a>
++        <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Addresses') ?></a>
+     </div>
+     <div class="col2-set">
+         <div class="col-1">
+diff --git a/app/locale/en_US/Mage_Adminhtml.csv b/app/locale/en_US/Mage_Adminhtml.csv
+index 5f5f5179293..62f130cc4ee 100644
+--- a/app/locale/en_US/Mage_Adminhtml.csv
++++ b/app/locale/en_US/Mage_Adminhtml.csv
+@@ -567,18 +567,12 @@
+ "Magento root directory","Magento root directory"
+ "OpenMage %s","OpenMage %s"
+ "Make sure that data encoding in the file is consistent and saved in one of supported encodings (UTF-8 or ANSI).","Make sure that data encoding in the file is consistent and saved in one of supported encodings (UTF-8 or ANSI)."
+-"Manage Attribute Sets","Manage Attribute Sets"
+-"Manage Attributes","Manage Attributes"
+-"Manage Categories","Manage Categories"
+-"Manage Content","Manage Content"
+-"Manage Currency Rates","Manage Currency Rates"
+-"Manage Customers","Manage Customers"
+-"Manage Options (values of your attribute)","Manage Options (values of your attribute)"
+-"Manage Ratings","Manage Ratings"
+-"Manage Stores","Manage Stores"
+-"Manage Tax Rules","Manage Tax Rules"
+-"Manage Tax Zones and Rates","Manage Tax Zones and Rates"
+-"Manage Titles (Size, Color, etc.)","Manage Titles (Size, Color, etc.)"
++"Content","Content"
++"Currency Rates","Currency Rates"
++"Options (values of your attribute)","Options (values of your attribute)"
++"Tax Rules","Tax Rules"
++"Tax Zones and Rates","Tax Zones and Rates"
++"Titles (Size, Color, etc.)","Titles (Size, Color, etc.)"
+ "Manual","Manual"
+ "Mass Product Assignment","Mass Product Assignment"
+ "Matched Expression","Matched Expression"
+diff --git a/app/locale/en_US/Mage_Catalog.csv b/app/locale/en_US/Mage_Catalog.csv
+index e72d033d9df..0b11a120be2 100644
+--- a/app/locale/en_US/Mage_Catalog.csv
++++ b/app/locale/en_US/Mage_Catalog.csv
+@@ -390,17 +390,12 @@
+ "List Mode","List Mode"
+ "List of Products that are set as New","List of Products that are set as New"
+ "List of types","List of types"
+-"Manage Attribute Sets","Manage Attribute Sets"
+-"Manage Attributes","Manage Attributes"
+-"Manage Catalog Categories","Manage Catalog Categories"
+-"Manage Categories","Manage Categories"
+-"Manage Label / Options","Manage Label / Options"
+-"Manage Options (values of your attribute)","Manage Options (values of your attribute)"
+-"Manage Product Attributes","Manage Product Attributes"
+-"Manage Product Sets","Manage Product Sets"
+-"Manage Products","Manage Products"
++"Catalog Categories","Catalog Categories"
++"Label / Options","Label / Options"
++"Options (values of your attribute)","Options (values of your attribute)"
++"Product Sets","Product Sets"
+ "Manage Stock","Manage Stock"
+-"Manage Titles (Size, Color, etc.)","Manage Titles (Size, Color, etc.)"
++"Titles (Size, Color, etc.)","Titles (Size, Color, etc.)"
+ "Max Characters","Max Characters"
+ "Maximal Depth","Maximal Depth"
+ "Maximum Image Size","Maximum Image Size"
+diff --git a/app/locale/en_US/Mage_Checkout.csv b/app/locale/en_US/Mage_Checkout.csv
+index 395c1edbdd0..9ed4d8b4122 100644
+--- a/app/locale/en_US/Mage_Checkout.csv
++++ b/app/locale/en_US/Mage_Checkout.csv
+@@ -162,7 +162,7 @@
+ "Loading next step...","Loading next step..."
+ "Login","Login"
+ "Login/Registration Before","Login/Registration Before"
+-"Manage Terms and Conditions","Manage Terms and Conditions"
++"Terms and Conditions","Terms and Conditions"
+ "Maximum Display Recently Added Item(s)","Maximum Display Recently Added Item(s)"
+ "Maximum qty allowed for Shipping to multiple addresses is %s","Maximum qty allowed for Shipping to multiple addresses is %s"
+ "Mini-cart promotion block","Mini-cart promotion block"
+diff --git a/app/locale/en_US/Mage_Cms.csv b/app/locale/en_US/Mage_Cms.csv
+index 3920b54d590..9748335e68b 100644
+--- a/app/locale/en_US/Mage_Cms.csv
++++ b/app/locale/en_US/Mage_Cms.csv
+@@ -75,7 +75,6 @@
+ "Layout","Layout"
+ "Layout Update XML","Layout Update XML"
+ "Link to a CMS Page","Link to a CMS Page"
+-"Manage Pages","Manage Pages"
+ "Media Gallery","Media Gallery"
+ "Media Storage","Media Storage"
+ "Meta Data","Meta Data"
+diff --git a/app/locale/en_US/Mage_Core.csv b/app/locale/en_US/Mage_Core.csv
+index 0f0bfc66135..29acdbb894a 100644
+--- a/app/locale/en_US/Mage_Core.csv
++++ b/app/locale/en_US/Mage_Core.csv
+@@ -202,7 +202,6 @@
+ "Magento info API","Magento info API"
+ "Mail Sending Settings","Mail Sending Settings"
+ "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/"
+-"Manage Stores","Manage Stores"
+ "Match expressions in the same order as displayed in the configuration.","Match expressions in the same order as displayed in the configuration."
+ "Maximum Log Level","Maximum Log Level"
+ "Media Storage","Media Storage"
+diff --git a/app/locale/en_US/Mage_CurrencySymbol.csv b/app/locale/en_US/Mage_CurrencySymbol.csv
+index c2702f3fead..98c82294b18 100644
+--- a/app/locale/en_US/Mage_CurrencySymbol.csv
++++ b/app/locale/en_US/Mage_CurrencySymbol.csv
+@@ -1,7 +1,6 @@
+ "Currency","Currency"
+ "Custom currency symbols were applied successfully.","Custom currency symbols were applied successfully."
+-"Manage Currency","Manage Currency"
+-"Manage Currency Rates","Manage Currency Rates"
++"Currency Rates","Currency Rates"
+ "Rates","Rates"
+ "Save Currency Symbols","Save Currency Symbols"
+ "Symbol","Symbol"
+diff --git a/app/locale/en_US/Mage_Customer.csv b/app/locale/en_US/Mage_Customer.csv
+index 665ea1c17c9..0753e2b1fda 100644
+--- a/app/locale/en_US/Mage_Customer.csv
++++ b/app/locale/en_US/Mage_Customer.csv
+@@ -213,8 +213,7 @@
+ "Login and password are required.","Login and password are required."
+ "Login or Create an Account","Login or Create an Account"
+ "MM","MM"
+-"Manage Addresses","Manage Addresses"
+-"Manage Customers","Manage Customers"
++"Addresses","Addresses"
+ "Maximum length must be less then %s symbols","Maximum length must be less then %s symbols"
+ "Middle Name","Middle Name"
+ "Minimum admin password length","Minimum admin password length"
+diff --git a/app/locale/en_US/Mage_Rating.csv b/app/locale/en_US/Mage_Rating.csv
+index 8c4df144444..20aecb9fe16 100644
+--- a/app/locale/en_US/Mage_Rating.csv
++++ b/app/locale/en_US/Mage_Rating.csv
+@@ -11,7 +11,6 @@
+ "Edit Rating","Edit Rating"
+ "ID","ID"
+ "If you do not specify a rating title for a store, the default value will be used.","If you do not specify a rating title for a store, the default value will be used."
+-"Manage Ratings","Manage Ratings"
+ "New Rating","New Rating"
+ "Option Label","Option Label"
+ "Option Title","Option Title"
+diff --git a/app/locale/en_US/Mage_Review.csv b/app/locale/en_US/Mage_Review.csv
+index f72c05005b9..e73e99acf46 100644
+--- a/app/locale/en_US/Mage_Review.csv
++++ b/app/locale/en_US/Mage_Review.csv
+@@ -45,7 +45,6 @@
+ "How do you rate this product?","How do you rate this product?"
+ "ID","ID"
+ "Let us know your thoughts","Let us know your thoughts"
+-"Manage Ratings","Manage Ratings"
+ "My Product Reviews","My Product Reviews"
+ "My Recent Reviews","My Recent Reviews"
+ "Name","Name"
+diff --git a/app/locale/en_US/Mage_SalesRule.csv b/app/locale/en_US/Mage_SalesRule.csv
+index 151b165cc2e..91e32f11008 100644
+--- a/app/locale/en_US/Mage_SalesRule.csv
++++ b/app/locale/en_US/Mage_SalesRule.csv
+@@ -62,7 +62,7 @@
+ "Inactive","Inactive"
+ "Item totals are not set for rule.","Item totals are not set for rule."
+ "Labels","Labels"
+-"Manage Coupon Codes","Manage Coupon Codes"
++"Coupon Codes","Coupon Codes"
+ "Maximum Qty Discount is Applied To","Maximum Qty Discount is Applied To"
+ "NOT FOUND","NOT FOUND"
+ "NOT LOGGED IN","NOT LOGGED IN"
+diff --git a/app/locale/en_US/Mage_Tag.csv b/app/locale/en_US/Mage_Tag.csv
+index 3fe74078bde..3cc5fd682db 100644
+--- a/app/locale/en_US/Mage_Tag.csv
++++ b/app/locale/en_US/Mage_Tag.csv
+@@ -41,7 +41,6 @@
+ "Info","Info"
+ "Last Name","Last Name"
+ "List","List"
+-"Manage Tags","Manage Tags"
+ "Middle Name","Middle Name"
+ "My Recent Tags","My Recent Tags"
+ "My Tags","My Tags"
+diff --git a/app/locale/en_US/Mage_Tax.csv b/app/locale/en_US/Mage_Tax.csv
+index df45a8c0820..8c3b161de85 100644
+--- a/app/locale/en_US/Mage_Tax.csv
++++ b/app/locale/en_US/Mage_Tax.csv
+@@ -70,11 +70,11 @@
+ "Including and Excluding Tax","Including and Excluding Tax"
+ "Invalid file format upload attempt","Invalid file format upload attempt"
+ "Invalid file upload attempt","Invalid file upload attempt"
+-"Manage Customer Tax Classes","Manage Customer Tax Classes"
+-"Manage Product Tax Classes","Manage Product Tax Classes"
+-"Manage Tax Rates","Manage Tax Rates"
+-"Manage Tax Rules","Manage Tax Rules"
+-"Manage Tax Zones & Rates","Manage Tax Zones & Rates"
++"Customer Tax Classes","Customer Tax Classes"
++"Product Tax Classes","Product Tax Classes"
++"Tax Rates","Tax Rates"
++"Tax Rules","Tax Rules"
++"Tax Zones & Rates","Tax Zones & Rates"
+ "Maximum zip code length is 9.","Maximum zip code length is 9."
+ "Name","Name"
+ "New Class","New Class"
+diff --git a/app/locale/en_US/Mage_Widget.csv b/app/locale/en_US/Mage_Widget.csv
+index c8395c5fe88..6d8af306fde 100644
+--- a/app/locale/en_US/Mage_Widget.csv
++++ b/app/locale/en_US/Mage_Widget.csv
+@@ -31,7 +31,7 @@
+ "Insert Widget","Insert Widget"
+ "Insert Widget...","Insert Widget..."
+ "Layout Updates","Layout Updates"
+-"Manage Widget Instances","Manage Widget Instances"
++"Widget Instances","Widget Instances"
+ "New Instance","New Instance"
+ "New Widget Instance","New Widget Instance"
+ "Next page","Next page"
+diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
+index 081f18219b1..88e1c70d79c 100644
+--- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
+@@ -42,7 +42,7 @@
+  *
+  * Steps:
+  * 1. Open Backend
+- * 2. Go to System -> Manage Stores
++ * 2. Go to System -> Stores
+  * 3. Click "Create Store View" button
+  * 4. Fill data according to dataset
+  * 5. Perform all assertions
+diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
+index 4b9990dccfd..edc723b4614 100644
+--- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
+@@ -38,7 +38,7 @@
+ /**
+  * Steps:
+  * 1. Log in to backend.
+- * 2. Go to System -> Manage Stores.
++ * 2. Go to System -> Stores.
+  * 3. Click "Create Store" button.
+  * 4. Fill data according to dataset.
+  * 5. Click "Save Store" button.
+diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
+index 10f9213dc40..72c07fbd169 100644
+--- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
+@@ -40,7 +40,7 @@
+ /**
+  * Steps:
+  * 1. Open Backend.
+- * 2. Go to System -> Manage Stores.
++ * 2. Go to System -> Stores.
+  * 3. Click "Create Website" button.
+  * 4. Fill data according to dataset.
+  * 5. Create Store with created Website.
+diff --git a/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
+index 103106aac49..5827ab81e5d 100644
+--- a/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
+@@ -35,7 +35,7 @@
+ /**
+  * Steps:
+  * 1. Login to the backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Click "Add Product".
+  * 4. Select Bundle Product and Attribute set.
+  * 5. Fill in all data according to data set.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
+index 98ebf203876..7da20935537 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
+@@ -41,7 +41,7 @@
+  *
+  * Steps:
+  * 1. Login to the backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Click "Add Product".
+  * 4. Select Configurable Product and Attribute set.
+  * 5. Select attribute.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
+index fb1a5ee8e37..848ec865704 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
+@@ -36,7 +36,7 @@
+ /**
+  * Steps:
+  * 1. Login to the backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Click "Add Product" button.
+  * 4. Select "Grouped Product" in product type field and click "Continue".
+  * 5. Fill in data according to attached data set.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
+index eeb1a1b7750..87a04926ffb 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
+@@ -38,7 +38,7 @@
+  *
+  * Steps:
+  * 1. Login to the backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Click "Add Product".
+  * 4. Select "Simple Product" in product type field and click "Continue".
+  * 5. Fill in data according to attached data set.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
+index e2a573b12cd..73371f68dc7 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
+@@ -37,7 +37,7 @@
+  *
+  * Steps:
+  * 1. Login to the backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Click "Add Product".
+  * 4. Select "Virtual Product" in product type field and click "Continue".
+  * 5. Fill in data according to attached data set.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
+index 203a532a847..1eb154b5c84 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
+@@ -39,7 +39,7 @@
+  *
+  * Steps:
+  * 1. Login to backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Search and open product.
+  * 4. Click "Duplicate".
+  * 5. Perform asserts.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
+index 584c5d54b9f..e47deb27d6c 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
+@@ -32,7 +32,7 @@
+  *
+  * Steps:
+  * 1. Open Backend.
+- * 2. Go to Catalog -> Manage Products.
++ * 2. Go to Catalog -> Products.
+  * 3. Open config1 product.
+  * 4. For config1 add as cross-sells: simp1, simp2.
+  * 5. Save product.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
+index add362d0dab..2ab64b097a5 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
+@@ -32,7 +32,7 @@
+  *
+  * Steps:
+  * 1. Open Backend.
+- * 2. Go to Catalog -> Manage Products.
++ * 2. Go to Catalog -> Products.
+  * 3. Open simp1 product.
+  * 4. For simp1 add as related: config1, simp2.
+  * 5. Save product.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
+index 4150c5d07e9..0dbe0e1b492 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
+@@ -32,7 +32,7 @@
+  *
+  * Steps:
+  * 1. Open Backend.
+- * 2. Go to Catalog -> Manage Products.
++ * 2. Go to Catalog -> Products.
+  * 3. Open simp1 product.
+  * 4. For simp1 add as up-sells: config1, simp2.
+  * 5. Save product.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
+index 92137df5fed..9e71dbf63b4 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
+@@ -37,7 +37,7 @@
+  *
+  * Steps:
+  * 1. Log in to backend.
+- * 2. Open Catalog -> Manage Products.
++ * 2. Open Catalog -> Products.
+  * 3. Search and open configurable product from preconditions.
+  * 4. Fill in data according to dataset.
+  * 5. Save product.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+index b4e83a4d297..d3286534cce 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+@@ -39,7 +39,7 @@
+  *
+  * Steps:
+  * 1. Login to backend.
+- * 2. Navigate to Catalog > Manage Products.
++ * 2. Navigate to Catalog > Products.
+  * 3. Select a product in the grid.
+  * 4. Edit test value(s) according to dataset.
+  * 5. Click "Save".
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
+index 1aacae492ce..4a4551698cc 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
+@@ -39,7 +39,7 @@
+  *
+  * Steps:
+  * 1. Log in to Backend.
+- * 2. Navigate to Catalog > Attributes > Manage Attribute Sets.
++ * 2. Navigate to Catalog > Attributes > Attribute Sets.
+  * 3. Start to create new Attribute Set.
+  * 4. Fill out fields data according to data set.
+  * 5. Add created Product Attribute to Attribute Set.
+diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
+index 7d28f5cc42d..75ab757b72a 100644
+--- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
+@@ -36,7 +36,7 @@
+  *
+  * Test Flow:
+  * 1. Log in to backend.
+- * 2. Navigate to Catalog > Attributes > Manage Attributes.
++ * 2. Navigate to Catalog > Attributes > Attributes.
+  * 3. Click 'Add New Attribute' button.
+  * 4. Fill out fields data according to data set.
+  * 5. Save Product Attribute.
+diff --git a/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php b/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
+index 3714c38766c..84fdf7d441c 100644
+--- a/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
+@@ -41,12 +41,12 @@
+  * Test Flow:
+  * Preconditions:
+  * 1. Apply custom currency in Config.
+- * 2. Navigate to Stores->Manage Currency->Rates and click to Import button.
++ * 2. Navigate to Stores->Currency->Rates and click to Import button.
+  * 3. Create simple product.
+  *
+  * Steps:
+  * 1. Login to backend.
+- * 2. Navigate to Stores->Manage Currency->Symbols.
++ * 2. Navigate to Stores->Currency->Symbols.
+  * 3. Make changes according to dataset.
+  * 4. Click 'Save Currency Symbols' button.
+  * 5. Perform all asserts.
+diff --git a/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
+index 927a2465d00..571eb7d7a6d 100644
+--- a/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
+@@ -35,7 +35,7 @@
+ /**
+  * Steps:
+  * 1. Log in to Backend.
+- * 2. Navigate to Catalog -> Manage Products.
++ * 2. Navigate to Catalog -> Products.
+  * 3. Start to create new Downloadable product.
+  * 4. Fill in data according to data set.
+  * 5. Save product.
+diff --git a/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php b/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
+index 94012e77fd1..68c12a3b631 100644
+--- a/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
++++ b/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
+@@ -33,7 +33,7 @@
+  *
+  * Steps:
+  * 1. Open Backend.
+- * 2. Go to Customers -> Manage Customers.
++ * 2. Go to Customers -> Customers.
+  * 3. Select customer created in preconditions.
+  * 4. Click Create Order button.
+  * 5. Add Products according to dataset.
+diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
+index 5a948596ffe..4a9653a3917 100644
+--- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
+@@ -34,7 +34,7 @@
+ /**
+  * Steps:
+  * 1. Log in as default admin user.
+- * 2. Go to Sales > Tax > Manage Tax Zones and Rates.
++ * 2. Go to Sales > Tax > Tax Zones and Rates.
+  * 3. Click 'Add New Tax Rate' button.
+  * 4. Fill in data according to dataset
+  * 5. Save Tax Rate.
+diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
+index b736dea3f7a..5d041b761a2 100644
+--- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
+@@ -35,7 +35,7 @@
+  * Steps:
+  *
+  * 1. Log in to backend.
+- * 2. Go to Sales -> Tax -> Manage Tax Rules.
++ * 2. Go to Sales -> Tax -> Tax Rules.
+  * 3. Click 'Add New Tax Rule' button.
+  * 4. Fill in data according to dataset.
+  * 5. Save Tax Rule.
+diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
+index fad531e4a6c..7c2f50868d8 100644
+--- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
++++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
+@@ -37,7 +37,7 @@
+  *
+  * Steps:
+  * 1. Log in as default admin user.
+- * 2. Go to Sales -> Tax -> Manage Tax Zones and Rates.
++ * 2. Go to Sales -> Tax -> Tax Zones and Rates.
+  * 3. Open created tax rate.
+  * 4. Click "Delete Rate" button.
+  * 5. Perform all assertions.
