@@ -191,16 +191,18 @@ index 34dee0d26ef..91455fae5a1 100644
 -             ->_title($this->__('Manage Categories'));
 +             ->_title($this->__('Categories'));
  
-         $categoryId = (int) $this->getRequest()->getParam('id',false);
+         $categoryId = (int) $this->getRequest()->getParam('id', false);
          $storeId    = (int) $this->getRequest()->getParam('store');
-@@ -203,8 +202,8 @@ public function editAction()
+@@ -203,9 +202,9 @@ public function editAction()
          $this->getLayout()->getBlock('head')->setCanLoadExtJs(true)
              ->setContainerCssClass('catalog-categories');
  
--        $this->_addBreadcrumb(Mage::helper('catalog')->__('Manage Catalog Categories'),
--             Mage::helper('catalog')->__('Manage Categories')
-+        $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog Categories'),
-+             Mage::helper('catalog')->__('Categories')
+-        $this->_addBreadcrumb(
+-            Mage::helper('catalog')->__('Manage Catalog Categories'),
+-            Mage::helper('catalog')->__('Manage Categories')
++        $this->_addBreadcrumb(
++            Mage::helper('catalog')->__('Catalog Categories'),
++            Mage::helper('catalog')->__('Categories')
          );
  
          $block = $this->getLayout()->getBlock('catalog.wysiwyg.js');
