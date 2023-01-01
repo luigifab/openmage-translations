@@ -1,9 +1,9 @@
 <?php
 /**
  * Created L/10/12/2012
- * Updated S/24/09/2022
+ * Updated D/01/01/2023
  *
- * Copyright 2012-2022 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2012-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/translator
  *
  * This program is free software, you can redistribute it or modify
@@ -209,10 +209,13 @@ else if (in_array('update', $argv)) {
 					$countTranslated++;
 			}
 
-			echo '| ',str_pad($locale, strlen($col1)),' ',
-				'| ',str_pad(count($files), strlen($col2), ' ', STR_PAD_LEFT),' ',
-				'| ',str_pad($countTranslated.'/'.$countSource, strlen($col3), ' ', STR_PAD_LEFT),' ',
-				'| ',str_pad(number_format(round($countTranslated * 100 / $countSource, 2), 2).'%', strlen($col4), ' ', STR_PAD_LEFT),' |',"\n";
+			if ($countTranslated > 0) {
+				echo '| ',str_pad($locale, strlen($col1)),' ',
+					'| ',str_pad(count($files), strlen($col2), ' ', STR_PAD_LEFT),' ',
+					'| ',str_pad($countTranslated.'/'.$countSource, strlen($col3), ' ', STR_PAD_LEFT),' ',
+					'| ',str_pad(number_format(round($countTranslated * 100 / $countSource, 2), 2).'%', strlen($col4), ' ', STR_PAD_LEFT),' ',
+					'|',"\n";
+			}
 
 			// update csv files
 			foreach ($models as $file) {

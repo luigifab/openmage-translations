@@ -129,6 +129,7 @@
 "Logo Image Src","Logo Dosyası"
 "Mail Sending Settings","E-posta Gönderim Ayarları"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Ana adresin '/' (slaş veya bölü) ile bittiğinden emin olunuz, örnek http://www.siteniz.com/magento/"
+"Manage Stores","Mağazaları Yönet"
 "Match expressions in the same order as displayed in the configuration.","İfadeleri ayarlarda gösterildiği sırayla eşleştir."
 "Media Storage","Medya Deposu"
 "Merge CSS Files","CSS dosyalarını Birleştir"

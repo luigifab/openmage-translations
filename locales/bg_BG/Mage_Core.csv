@@ -129,6 +129,7 @@
 "Logo Image Src","Src за Logo изображение """
 "Mail Sending Settings","Настройки за изпращане на поща"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Уверете се, че основа URL завършва с ""/"" (наклонена черта), например http://yourdomain/magento/"
+"Manage Stores","Управление на магазини"
 "Match expressions in the same order as displayed in the configuration.","Търси съответсвия на изразите в същия ред, в който са показани в конфигурацията."
 "Media Storage","Медия склад"
 "Merge CSS Files","Обединяване на CSS файлове"

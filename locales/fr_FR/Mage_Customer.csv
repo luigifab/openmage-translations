@@ -194,6 +194,8 @@
 "Login Options","Options de connexion"
 "Login and password are required.","L'identifiant et le mot de passe sont obligatoires."
 "Login or Create an Account","Identifiez-vous ou créez un compte"
+"Manage Addresses","Gérer les adresses"
+"Manage Customers","Gérer les clients"
 "Maximum length must be less then %s symbols","La longueur maximale est de %s symboles"
 "Missing email, skipping the record, line: %s","Email manquant, l'enregistrement de la ligne %s est ignoré"
 "Missing email, skipping the record.","Email manquant, ligne ignorée."

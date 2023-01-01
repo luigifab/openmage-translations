@@ -129,6 +129,7 @@
 "Logo Image Src","Logo 图片源"
 "Mail Sending Settings","邮件发送设置"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","请确保，基 URL 以 '/' (斜线)，例如 http://yourdomain/magento/"
+"Manage Stores","管理存储"
 "Match expressions in the same order as displayed in the configuration.","匹配形态（Match expressions） in the same order as displayed in the configuration."
 "Media Storage","多媒体储存"
 "Merge CSS Files","合并 CSS 文件"

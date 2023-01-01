@@ -101,6 +101,7 @@
 "Login is Case Sensitive","Логін є Чутливим до Регістра"
 "Mail Sending Settings","Налаштування Відправки Пошти"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Переконайтеся, що базова URL-адреса закінчується на '/' (слеш), напр. http://yourdomain/magento/"
+"Manage Stores","Управління Магазинами"
 "Media Storage","Медіасховище"
 "Merge CSS Files","Об'єднати Файли CSS"
 "Merge JavaScript Files","Об'єднати JavaScript Файли"

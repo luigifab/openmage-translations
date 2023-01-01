@@ -79,6 +79,7 @@
 "Login is Case Sensitive","로그인은 대소문자를 구분합니다"
 "Mail Sending Settings","메일 보내기 설정"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","URL 마지막에 '/' (슬래시)를 반드시 넣어주십시오.예) http://yourdomain/magento/"
+"Manage Stores","스토어 관리"
 "Merge CSS Files","CSS 파일 병합"
 "Merge JavaScript Files","자바스크립트 파일 병합"
 "Name","이름 "

@@ -100,6 +100,7 @@
 "Logo Image Alt","Texto alternativo al logotipo"
 "Mail Sending Settings","Configuración del envío de correo"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Asegúrese de que la dirección URL base termina con '/' (barra diagonal), ej.: http://yourdomain/magento/"
+"Manage Stores","Gestionar tiendas"
 "Media Storage","Almacenamiento de medios"
 "Merge CSS Files","Combinar archivos CSS"
 "Merge JavaScript Files","Combinar archivos de JavaScript"

@@ -177,6 +177,7 @@
 "Magento info API","OpenMage Info API"
 "Mail Sending Settings","Mail senden Einstellungen"
 "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Achten Sie darauf, dass die Basis-URL mit einem '/' (Slash) endet, z.B. http://ihredomain/magento/"
+"Manage Stores","Stores verwalten"
 "Match expressions in the same order as displayed in the configuration.","Vergleiche Ausdrücke in der gleichen Reihenfolge wie bei der Darstellung in der Konfiguration."
 "Media Storage","Medienspeicher"
 "Merge CSS Files","CSS-Dateien zusammenführen"
