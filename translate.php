@@ -1,7 +1,7 @@
 <?php
 /**
  * Created L/10/12/2012
- * Updated D/01/01/2023
+ * Updated D/26/02/2023
  *
  * Copyright 2012-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/translator
@@ -176,8 +176,8 @@ else if (in_array('update', $argv)) {
 	sort($locales);
 
 	// markdown
-	echo '| Locale  | CSV used | Strings translated | Percent |',"\n";
-	echo '| ------- | --------:| ------------------:| -------:|',"\n";
+	echo '| Locale  | CSV used | Strings translated | Percent    |',"\n";
+	echo '| ------- | --------:| ------------------:| ----------:|',"\n";
 	$col1 = '-------';
 	$col2 = '--------';
 	$col3 = '------------------';
@@ -185,6 +185,7 @@ else if (in_array('update', $argv)) {
 
 	// action
 	$ignore = ['en_US', 'ckb_IR', 'de_DU', 'en_ID', 'en_PT', 'ku_TR', 'nl_DI', 'nl_di', 'no_NO', 'sr_CS', 'sr_SP'];
+	$colors = [90 => '🏿', 80 => '🏾', 70 => '🏽', 60 => '🏼', 50 => '🏻']; // https://stackoverflow.com/a/65174367/2980105
 	foreach ($locales as $locale) {
 
 		if (!in_array($locale, $ignore) && (mb_strlen($locale) >= 5)) {
@@ -209,11 +210,25 @@ else if (in_array('update', $argv)) {
 					$countTranslated++;
 			}
 
+			// ignore < 10 translations
+			if ($countTranslated < 10) {
+				array_map('unlink', glob('./locales/'.$locale.'/*.csv'));
+				continue;
+			}
+
 			if ($countTranslated > 0) {
+				$nb = round($countTranslated * 100 / $countSource, 2);
+				$color = '  ';
+				foreach ($colors as $cval => $cchar) {
+					if ($nb >= $cval) {
+						$color = $cchar;
+						break;
+					}
+				}
 				echo '| ',str_pad($locale, strlen($col1)),' ',
 					'| ',str_pad(count($files), strlen($col2), ' ', STR_PAD_LEFT),' ',
 					'| ',str_pad($countTranslated.'/'.$countSource, strlen($col3), ' ', STR_PAD_LEFT),' ',
-					'| ',str_pad(number_format(round($countTranslated * 100 / $countSource, 2), 2).'%', strlen($col4), ' ', STR_PAD_LEFT),' ',
+					'| ',$color,' ',str_pad(number_format($nb, 2).'%', strlen($col4), ' ', STR_PAD_LEFT),' ',
 					'|',"\n";
 			}
 
