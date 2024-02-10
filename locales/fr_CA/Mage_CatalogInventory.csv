@@ -29,6 +29,7 @@
 "Stock Status","État du stock"
 "The requested quantity for ""%s"" is not available.","La quantité demandée pour ""%s"" n'est pas disponible."
 "The stock item for Product in option is not valid.","L'article en stock pour cette option du produit n'est pas valide."
+"The stock item for Product is not valid.","Le stock pour le produit n'est pas valide."
 "To Fixed Value","Valeur fixe"
 "To Percentage","En pourcentage"
 "Update","Mettre à jour"

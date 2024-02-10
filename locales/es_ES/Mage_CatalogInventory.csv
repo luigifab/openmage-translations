@@ -28,6 +28,7 @@
 "Stock Options","Opciones de existencias"
 "Stock Status","Estado de existencias"
 "The stock item for Product in option is not valid.","Es estado de existencia para la opción selectada no es válido."
+"The stock item for Product is not valid.","El artículo de inventario para el producto no es válido."
 "To Fixed Value","Para valor fijo"
 "To Percentage","Para porcentaje"
 "Update","Actualizar"

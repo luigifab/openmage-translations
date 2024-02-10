@@ -235,6 +235,7 @@
             ["locales/ca_ES/Mage_CatalogInventory.csv", "app/locale/ca_ES/Mage_CatalogInventory.csv"],
             ["locales/ca_ES/Mage_CatalogRule.csv", "app/locale/ca_ES/Mage_CatalogRule.csv"],
             ["locales/ca_ES/Mage_CatalogSearch.csv", "app/locale/ca_ES/Mage_CatalogSearch.csv"],
+            ["locales/ca_ES/Mage_Centinel.csv", "app/locale/ca_ES/Mage_Centinel.csv"],
             ["locales/ca_ES/Mage_Checkout.csv", "app/locale/ca_ES/Mage_Checkout.csv"],
             ["locales/ca_ES/Mage_Cms.csv", "app/locale/ca_ES/Mage_Cms.csv"],
             ["locales/ca_ES/Mage_ConfigurableSwatches.csv", "app/locale/ca_ES/Mage_ConfigurableSwatches.csv"],

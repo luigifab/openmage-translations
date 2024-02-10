@@ -12,6 +12,7 @@
 "Enabled","Ввімкнено"
 "Expiration Date","Дата Збігає"
 "Expiration Date: %s/%s","Дата завершення: %s/%s"
+"Incorrect credit card expiration date.","Неправильний термін дії банківської картки."
 "Issue Number","Номер емітента картки"
 "Make Check payable to: %s","Зробити чек оплачуваним на ім'я: %s"
 "Maximum Order Total","Максимальний підсумок замовлення"

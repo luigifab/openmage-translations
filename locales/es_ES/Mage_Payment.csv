@@ -1,5 +1,6 @@
 "* Required Fields","* Campos obligatorios"
 "--Please Select--","--Por favor seleccione--"
+"Automatically Invoice All Items","Facturar automáticamente todos los artículos"
 "Bank Transfer Payment","Pago por transferencia bancaria"
 "Card Verification Number","Número de verificación de tarjeta"
 "Cash On Delivery Payment","Pago contra reembolso"
@@ -51,3 +52,4 @@
 "Unable to save Billing Agreement:","No se puede guardar el contrato de facturación:"
 "What is this?","¿Qué es esto?"
 "Year","Año"
+"Zero Subtotal Checkout","Proceso de pago con subtotal cero"

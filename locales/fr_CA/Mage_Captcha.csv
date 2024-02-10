@@ -12,6 +12,7 @@
 "Number of Symbols","Nombre de symboles"
 "Number of Unsuccessful Attempts to Login","Nombre d'essais infructueux"
 "Please specify 8 symbols at the most. Range allowed (e.g. 3-5)","Spécifiez au maximum 8 symboles. Les tranches sont acceptées (par ex. 3-5)"
+"Please type the letters below","Veuillez saisir les lettres ci-dessous"
 "Please use only letters (a-z or A-Z) or numbers (0-9) in this field. No spaces or other characters are allowed.<br />Similar looking characters (e.g. ""i"", ""l"", ""1"") decrease chance of correct recognition by customer.","Utilisez uniquement des lettres (a-z ou A-Z) et des chiffres (0-9). Aucun espace ou autre caractère n'est autorisé.<br/>Les caractères à l'apparence proche (ex : « i », « l », « 1 ») diminuent les chances de reconnaissance correcte par l'internaute."
 "Reload captcha","Recharger le captcha"
 "Symbols Used in CAPTCHA","Symboles utilisés dans le CAPTCHA"

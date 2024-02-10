@@ -1,9 +1,9 @@
 <?php
 /**
  * Created L/10/12/2012
- * Updated D/26/02/2023
+ * Updated S/10/02/2024
  *
- * Copyright 2012-2023 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2012-2024 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/translator
  *
  * This program is free software, you can redistribute it or modify
@@ -19,7 +19,8 @@
 
 chdir(__DIR__);
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', (PHP_VERSION_ID < 80100) ? '1' : 1);
+
 date_default_timezone_set('UTC');
 header('Content-Type: text/plain; charset=utf-8');
 
@@ -35,7 +36,8 @@ function fileGetContents(string $url) {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 8);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0');
+	curl_setopt($ch, CURLOPT_ENCODING , ''); // @see https://stackoverflow.com/q/17744112/2980105
+	curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0');
 
 	$result = curl_exec($ch);
 	$result = (($result === false) || (curl_errno($ch) !== 0)) ? trim('CURL_ERROR '.curl_errno($ch).' '.curl_error($ch)) : $result;
@@ -105,8 +107,7 @@ function loadCSV(array $files, bool $onlyKeys = false) {
 
 		$resource = fopen($file, 'rb');
 
-		while (($line = fgetcsv($resource, 2500)) !== false) {
-			$line = (array) $line; // (yes)
+		while (!empty($line = fgetcsv($resource, 2500))) {
 			if (!empty($line[0]) && !empty($line[1]) && empty($data[$line[0]]))
 				$data[$line[0]] = rtrim(stripslashes($line[1]), "\r\n");
 		}

@@ -1,9 +1,8 @@
-# https://github.com/OpenMage/magento-lts/pull/1359
 diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
-index 2b3b74121fb..bd505f36baa 100644
+index 6697084389..f8853cfb4e 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute.php
-@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute extends Mage_Adminhtml_Bloc
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute extends Mage_Adminhtml_Bloc
      public function __construct()
      {
          $this->_controller = 'catalog_product_attribute';
@@ -13,10 +12,10 @@ index 2b3b74121fb..bd505f36baa 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
-index 7633a88ab3d..5a208a8d141 100644
+index e156dfe08f..6773c9c544 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Edit/Tabs.php
-@@ -47,8 +47,8 @@ protected function _beforeToHtml()
+@@ -41,8 +41,8 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Edit_Tabs extends Mage_Admi
          $model = Mage::registry('entity_attribute');
  
          $this->addTab('labels', [
@@ -28,23 +27,23 @@ index 7633a88ab3d..5a208a8d141 100644
          ]);
  
 diff --git a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
-index 93b0bb6e570..84d4d0820b5 100644
+index 075c543dd5..68f8caf094 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Attribute/Set/Toolbar/Main.php
-@@ -60,7 +60,7 @@ protected function getNewButtonHtml()
- 
+@@ -57,7 +57,7 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Toolbar_Main extends Ma
+      */
      protected function _getHeader()
      {
 -        return Mage::helper('catalog')->__('Manage Attribute Sets');
 +        return Mage::helper('catalog')->__('Attribute Sets');
      }
  
-     protected function _toHtml()
+     /**
 diff --git a/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php b/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
-index 90c64a5f215..7b952fc6805 100644
+index 7263449b91..ca47b9378d 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Checkout/Agreement.php
-@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Checkout_Agreement extends Mage_Adminhtml_Block_Widge
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Checkout_Agreement extends Mage_Adminhtml_Block_Widge
      public function __construct()
      {
          $this->_controller      = 'checkout_agreement';
@@ -54,10 +53,10 @@ index 90c64a5f215..7b952fc6805 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/Cms/Page.php b/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
-index 48e72654934..422c2f20fcc 100644
+index fa74a0c56e..246d99e317 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Cms/Page.php
-@@ -41,7 +41,7 @@ class Mage_Adminhtml_Block_Cms_Page extends Mage_Adminhtml_Block_Widget_Grid_Con
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Cms_Page extends Mage_Adminhtml_Block_Widget_Grid_Con
      public function __construct()
      {
          $this->_controller = 'cms_page';
@@ -67,10 +66,10 @@ index 48e72654934..422c2f20fcc 100644
          parent::__construct();
  
 diff --git a/app/code/core/Mage/Adminhtml/Block/Customer.php b/app/code/core/Mage/Adminhtml/Block/Customer.php
-index dd1b38c005a..72e6ccafdf6 100644
+index d1137b9992..ff4805f6ca 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Customer.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Customer.php
-@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Customer extends Mage_Adminhtml_Block_Widget_Grid_Con
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Customer extends Mage_Adminhtml_Block_Widget_Grid_Con
      public function __construct()
      {
          $this->_controller = 'customer';
@@ -80,10 +79,10 @@ index dd1b38c005a..72e6ccafdf6 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php b/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
-index efa086717e4..a56886c0372 100644
+index 55b830994f..11697ab6ae 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Promo/Quote/Edit/Tab/Coupons.php
-@@ -42,7 +42,7 @@ class Mage_Adminhtml_Block_Promo_Quote_Edit_Tab_Coupons
+@@ -28,7 +28,7 @@ class Mage_Adminhtml_Block_Promo_Quote_Edit_Tab_Coupons extends Mage_Adminhtml_B
       */
      public function getTabLabel()
      {
@@ -92,7 +91,7 @@ index efa086717e4..a56886c0372 100644
      }
  
      /**
-@@ -52,7 +52,7 @@ public function getTabLabel()
+@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Promo_Quote_Edit_Tab_Coupons extends Mage_Adminhtml_B
       */
      public function getTabTitle()
      {
@@ -102,10 +101,10 @@ index efa086717e4..a56886c0372 100644
  
      /**
 diff --git a/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php b/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
-index 1a9ed1869c6..2ed3fb8c49c 100644
+index 79356ef8f9..201e58d35c 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Rating/Rating.php
-@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Rating_Rating extends Mage_Adminhtml_Block_Widget_Gri
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Rating_Rating extends Mage_Adminhtml_Block_Widget_Gri
      public function __construct()
      {
          $this->_controller = 'rating';
@@ -115,10 +114,10 @@ index 1a9ed1869c6..2ed3fb8c49c 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/System/Currency.php b/app/code/core/Mage/Adminhtml/Block/System/Currency.php
-index a027e719b91..3e41939c141 100644
+index 3f89f8377a..581f78892e 100644
 --- a/app/code/core/Mage/Adminhtml/Block/System/Currency.php
 +++ b/app/code/core/Mage/Adminhtml/Block/System/Currency.php
-@@ -79,7 +79,7 @@ protected function _prepareLayout()
+@@ -73,7 +73,7 @@ class Mage_Adminhtml_Block_System_Currency extends Mage_Adminhtml_Block_Template
  
      protected function getHeader()
      {
@@ -128,10 +127,10 @@ index a027e719b91..3e41939c141 100644
  
      protected function getSaveButtonHtml()
 diff --git a/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php b/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
-index b71560ffe3d..ee100f9db98 100644
+index 32d664111d..2d6f5bb9ee 100644
 --- a/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
 +++ b/app/code/core/Mage/Adminhtml/Block/System/Store/Store.php
-@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_System_Store_Store extends Mage_Adminhtml_Block_Widge
+@@ -25,7 +25,7 @@ class Mage_Adminhtml_Block_System_Store_Store extends Mage_Adminhtml_Block_Widge
      public function __construct()
      {
          $this->_controller  = 'system_store';
@@ -141,10 +140,10 @@ index b71560ffe3d..ee100f9db98 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php b/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
-index b2fda941fa2..9d5f40174dc 100644
+index ffb4a22377..91c4564f69 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Tag/Tag.php
-@@ -38,7 +38,7 @@ class Mage_Adminhtml_Block_Tag_Tag extends Mage_Adminhtml_Block_Widget_Grid_Cont
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Tag_Tag extends Mage_Adminhtml_Block_Widget_Grid_Cont
      public function __construct()
      {
          $this->_controller = 'tag_tag';
@@ -154,10 +153,10 @@ index b2fda941fa2..9d5f40174dc 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php b/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
-index f91767161a9..5941c89b0aa 100644
+index 4379814d1d..5ec0951256 100644
 --- a/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
 +++ b/app/code/core/Mage/Adminhtml/Block/Tax/Rule.php
-@@ -37,7 +37,7 @@ class Mage_Adminhtml_Block_Tax_Rule extends Mage_Adminhtml_Block_Widget_Grid_Con
+@@ -24,7 +24,7 @@ class Mage_Adminhtml_Block_Tax_Rule extends Mage_Adminhtml_Block_Widget_Grid_Con
      public function __construct()
      {
          $this->_controller      = 'tax_rule';
@@ -167,10 +166,10 @@ index f91767161a9..5941c89b0aa 100644
          parent::__construct();
      }
 diff --git a/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php b/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
-index 8d3126ebb09..69508ce53b0 100644
+index e8727e2b36..3a4cf44c93 100644
 --- a/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
 +++ b/app/code/core/Mage/Adminhtml/Helper/Help/Mapping.php
-@@ -135,7 +135,7 @@ abstract class Mage_Adminhtml_Helper_Help_Mapping extends Mage_Core_Helper_Abstr
+@@ -125,7 +125,7 @@ abstract class Mage_Adminhtml_Helper_Help_Mapping extends Mage_Core_Helper_Abstr
              /* System → Import/Export */
              'system_convert_gui' => 'store-operations/dataflow.html',
              'system_convert_profile' => 'store-operations/dataflow.html',
@@ -180,10 +179,10 @@ index 8d3126ebb09..69508ce53b0 100644
              'system_currencysymbol' => 'store-operations/currency-symbols.html',
              /* System → Transactional emails */
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
-index 34dee0d26ef..91455fae5a1 100644
+index ad534a4be6..36f87fc1c3 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/CategoryController.php
-@@ -43,8 +43,7 @@ class Mage_Adminhtml_Catalog_CategoryController extends Mage_Adminhtml_Controlle
+@@ -37,8 +37,7 @@ class Mage_Adminhtml_Catalog_CategoryController extends Mage_Adminhtml_Controlle
      protected function _initCategory($getRootInstead = false)
      {
          $this->_title($this->__('Catalog'))
@@ -193,48 +192,46 @@ index 34dee0d26ef..91455fae5a1 100644
  
          $categoryId = (int) $this->getRequest()->getParam('id', false);
          $storeId    = (int) $this->getRequest()->getParam('store');
-@@ -203,9 +202,9 @@ public function editAction()
-         $this->getLayout()->getBlock('head')->setCanLoadExtJs(true)
+@@ -193,8 +192,8 @@ class Mage_Adminhtml_Catalog_CategoryController extends Mage_Adminhtml_Controlle
              ->setContainerCssClass('catalog-categories');
  
--        $this->_addBreadcrumb(
+         $this->_addBreadcrumb(
 -            Mage::helper('catalog')->__('Manage Catalog Categories'),
 -            Mage::helper('catalog')->__('Manage Categories')
-+        $this->_addBreadcrumb(
 +            Mage::helper('catalog')->__('Catalog Categories'),
 +            Mage::helper('catalog')->__('Categories')
          );
  
          $block = $this->getLayout()->getBlock('catalog.wysiwyg.js');
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
-index 8cb73a0ff8b..dda812c10cd 100644
+index b0e6e1f717..997162cc29 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/AttributeController.php
-@@ -63,7 +63,7 @@ protected function _initAction()
+@@ -56,7 +56,7 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
      {
          $this->_title($this->__('Catalog'))
               ->_title($this->__('Attributes'))
 -             ->_title($this->__('Manage Attributes'));
 +             ->_title($this->__('Attributes'));
  
-         if($this->getRequest()->getParam('popup')) {
+         if ($this->getRequest()->getParam('popup')) {
              $this->loadLayout('popup');
-@@ -72,8 +72,8 @@ protected function _initAction()
-                 ->_setActiveMenu('catalog/attributes')
+@@ -65,8 +65,8 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
+                 ->_setActiveMenu('catalog/attributes/attributes')
                  ->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'))
                  ->_addBreadcrumb(
 -                    Mage::helper('catalog')->__('Manage Product Attributes'),
--                    Mage::helper('catalog')->__('Manage Product Attributes'))
+-                    Mage::helper('catalog')->__('Manage Product Attributes')
 +                    Mage::helper('catalog')->__('Product Attributes'),
-+                    Mage::helper('catalog')->__('Product Attributes'))
++                    Mage::helper('catalog')->__('Product Attributes')
+                 )
              ;
          }
-         return $this;
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
-index dbee5d54665..46b40f14a1d 100644
+index 9346139661..b5f6c174ac 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/Product/SetController.php
-@@ -38,7 +38,7 @@ public function indexAction()
+@@ -31,7 +31,7 @@ class Mage_Adminhtml_Catalog_Product_SetController extends Mage_Adminhtml_Contro
      {
          $this->_title($this->__('Catalog'))
               ->_title($this->__('Attributes'))
@@ -243,18 +240,18 @@ index dbee5d54665..46b40f14a1d 100644
  
          $this->_setTypeId();
  
-@@ -47,8 +47,8 @@ public function indexAction()
+@@ -40,8 +40,8 @@ class Mage_Adminhtml_Catalog_Product_SetController extends Mage_Adminhtml_Contro
  
          $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'));
          $this->_addBreadcrumb(
 -            Mage::helper('catalog')->__('Manage Attribute Sets'),
--            Mage::helper('catalog')->__('Manage Attribute Sets'));
+-            Mage::helper('catalog')->__('Manage Attribute Sets')
 +            Mage::helper('catalog')->__('Attribute Sets'),
-+            Mage::helper('catalog')->__('Attribute Sets'));
++            Mage::helper('catalog')->__('Attribute Sets')
+         );
  
          $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_toolbar_main'));
-         $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_grid'));
-@@ -60,7 +60,7 @@ public function editAction()
+@@ -54,7 +54,7 @@ class Mage_Adminhtml_Catalog_Product_SetController extends Mage_Adminhtml_Contro
      {
          $this->_title($this->__('Catalog'))
               ->_title($this->__('Attributes'))
@@ -263,18 +260,18 @@ index dbee5d54665..46b40f14a1d 100644
  
          $this->_setTypeId();
          $attributeSet = Mage::getModel('eav/entity_attribute_set')
-@@ -81,8 +81,8 @@ public function editAction()
+@@ -75,8 +75,8 @@ class Mage_Adminhtml_Catalog_Product_SetController extends Mage_Adminhtml_Contro
  
          $this->_addBreadcrumb(Mage::helper('catalog')->__('Catalog'), Mage::helper('catalog')->__('Catalog'));
          $this->_addBreadcrumb(
 -            Mage::helper('catalog')->__('Manage Product Sets'),
--            Mage::helper('catalog')->__('Manage Product Sets'));
+-            Mage::helper('catalog')->__('Manage Product Sets')
 +            Mage::helper('catalog')->__('Product Sets'),
-+            Mage::helper('catalog')->__('Product Sets'));
++            Mage::helper('catalog')->__('Product Sets')
+         );
  
          $this->_addContent($this->getLayout()->createBlock('adminhtml/catalog_product_attribute_set_main'));
- 
-@@ -179,7 +179,7 @@ public function addAction()
+@@ -177,7 +177,7 @@ class Mage_Adminhtml_Catalog_Product_SetController extends Mage_Adminhtml_Contro
      {
          $this->_title($this->__('Catalog'))
               ->_title($this->__('Attributes'))
@@ -284,10 +281,10 @@ index dbee5d54665..46b40f14a1d 100644
  
          $this->_setTypeId();
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php b/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
-index 71b2a5e1acd..b007e4d88bb 100644
+index a10f7e2e71..a41cc758bd 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php
-@@ -70,7 +70,7 @@ protected function _construct()
+@@ -65,7 +65,7 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
      protected function _initProduct()
      {
          $this->_title($this->__('Catalog'))
@@ -296,7 +293,7 @@ index 71b2a5e1acd..b007e4d88bb 100644
  
          $productId  = (int) $this->getRequest()->getParam('id');
          $product    = Mage::getModel('catalog/product')
-@@ -185,7 +185,7 @@ protected function _outputBlocks()
+@@ -184,7 +184,7 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
      public function indexAction()
      {
          $this->_title($this->__('Catalog'))
@@ -306,10 +303,10 @@ index 71b2a5e1acd..b007e4d88bb 100644
          $this->loadLayout();
          $this->renderLayout();
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php b/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
-index 32da47da655..493b3ecccb5 100644
+index 9924aa8998..c7dd285d5f 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Cms/PageController.php
-@@ -46,7 +46,7 @@ protected function _initAction()
+@@ -32,7 +32,7 @@ class Mage_Adminhtml_Cms_PageController extends Mage_Adminhtml_Controller_Action
          $this->loadLayout()
              ->_setActiveMenu('cms/page')
              ->_addBreadcrumb(Mage::helper('cms')->__('CMS'), Mage::helper('cms')->__('CMS'))
@@ -318,7 +315,7 @@ index 32da47da655..493b3ecccb5 100644
          ;
          return $this;
      }
-@@ -58,7 +58,7 @@ public function indexAction()
+@@ -44,7 +44,7 @@ class Mage_Adminhtml_Cms_PageController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('CMS'))
               ->_title($this->__('Pages'))
@@ -327,7 +324,7 @@ index 32da47da655..493b3ecccb5 100644
  
          $this->_initAction();
          $this->renderLayout();
-@@ -80,7 +80,7 @@ public function editAction()
+@@ -66,7 +66,7 @@ class Mage_Adminhtml_Cms_PageController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('CMS'))
               ->_title($this->__('Pages'))
@@ -337,10 +334,10 @@ index 32da47da655..493b3ecccb5 100644
          // 1. Get ID and create model
          $id = $this->getRequest()->getParam('page_id');
 diff --git a/app/code/core/Mage/Adminhtml/controllers/CustomerController.php b/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
-index 1aa87188f11..9dbac1e5244 100644
+index 4cc278cdcd..dfc9c2a998 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/CustomerController.php
-@@ -46,7 +46,7 @@ public function preDispatch()
+@@ -45,7 +45,7 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
       */
      protected function _initCustomer($idFieldName = 'id')
      {
@@ -349,7 +346,7 @@ index 1aa87188f11..9dbac1e5244 100644
  
          $customerId = (int) $this->getRequest()->getParam($idFieldName);
          $customer = Mage::getModel('customer/customer');
-@@ -64,7 +64,7 @@ protected function _initCustomer($idFieldName = 'id')
+@@ -63,7 +63,7 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
       */
      public function indexAction()
      {
@@ -358,7 +355,7 @@ index 1aa87188f11..9dbac1e5244 100644
  
          if ($this->getRequest()->getQuery('ajax')) {
              $this->_forward('grid');
-@@ -88,7 +88,6 @@ public function indexAction()
+@@ -87,7 +87,6 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
           * Add breadcrumb item
           */
          $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Customers'), Mage::helper('adminhtml')->__('Customers'));
@@ -367,28 +364,28 @@ index 1aa87188f11..9dbac1e5244 100644
          $this->renderLayout();
      }
 diff --git a/app/code/core/Mage/Adminhtml/controllers/RatingController.php b/app/code/core/Mage/Adminhtml/controllers/RatingController.php
-index 388b1340fcf..a3e9eb34838 100644
+index 08a1d5fa62..9d63942881 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/RatingController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/RatingController.php
-@@ -40,7 +40,7 @@ public function indexAction()
+@@ -33,7 +33,7 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
          $this->loadLayout();
  
-         $this->_setActiveMenu('catalog/ratings');
+         $this->_setActiveMenu('catalog/reviews_ratings/ratings');
 -        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Ratings'), Mage::helper('adminhtml')->__('Manage Ratings'));
 +        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Ratings'), Mage::helper('adminhtml')->__('Ratings'));
          $this->_addContent($this->getLayout()->createBlock('adminhtml/rating_rating'));
  
          $this->renderLayout();
-@@ -59,7 +59,7 @@ public function editAction()
+@@ -52,7 +52,7 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
          $this->_title($ratingModel->getId() ? $ratingModel->getRatingCode() : $this->__('New Rating'));
  
-         $this->_setActiveMenu('catalog/ratings');
+         $this->_setActiveMenu('catalog/reviews_ratings/ratings');
 -        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Manage Ratings'), Mage::helper('adminhtml')->__('Manage Ratings'));
 +        $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Ratings'), Mage::helper('adminhtml')->__('Ratings'));
  
          $this->_addContent($this->getLayout()->createBlock('adminhtml/rating_edit'))
              ->_addLeft($this->getLayout()->createBlock('adminhtml/rating_edit_tabs'));
-@@ -149,7 +149,7 @@ protected function _initEnityId()
+@@ -142,7 +142,7 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Catalog'))
               ->_title($this->__('Reviews and Ratings'))
@@ -398,10 +395,10 @@ index 388b1340fcf..a3e9eb34838 100644
          Mage::register('entityId', Mage::getModel('rating/rating_entity')->getIdByCode('product'));
      }
 diff --git a/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php b/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
-index ecd09a747aa..241540bb95c 100644
+index 2a042a75a5..700e1df719 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/System/CurrencyController.php
-@@ -53,7 +53,7 @@ protected function _initCurrency()
+@@ -47,7 +47,7 @@ class Mage_Adminhtml_System_CurrencyController extends Mage_Adminhtml_Controller
       */
      public function indexAction()
      {
@@ -411,10 +408,10 @@ index ecd09a747aa..241540bb95c 100644
          $this->loadLayout();
          $this->_setActiveMenu('system/currency');
 diff --git a/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php b/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
-index 684f38e23c2..e7f0ca6965b 100644
+index 87154be97c..f98b37bc6c 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/System/StoreController.php
-@@ -55,7 +55,7 @@ protected function _initAction()
+@@ -49,7 +49,7 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
          $this->loadLayout()
              ->_setActiveMenu('system/store')
              ->_addBreadcrumb(Mage::helper('adminhtml')->__('System'), Mage::helper('adminhtml')->__('System'))
@@ -424,11 +421,11 @@ index 684f38e23c2..e7f0ca6965b 100644
          return $this;
      }
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
-index dd18a77a8b1..a8ece8a459e 100644
+index d86f3e6bc6..252cf41d21 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/CustomerController.php
-@@ -170,7 +170,7 @@ protected function _initAction()
-             ->_setActiveMenu('sales/tax/tax_class_customer')
+@@ -160,7 +160,7 @@ class Mage_Adminhtml_Tax_Class_CustomerController extends Mage_Adminhtml_Control
+             ->_setActiveMenu('sales/tax/classes_customer')
              ->_addBreadcrumb(Mage::helper('tax')->__('Sales'), Mage::helper('tax')->__('Sales'))
              ->_addBreadcrumb(Mage::helper('tax')->__('Tax'), Mage::helper('tax')->__('Tax'))
 -            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Customer Tax Classes'), Mage::helper('tax')->__('Manage Customer Tax Classes'))
@@ -437,11 +434,11 @@ index dd18a77a8b1..a8ece8a459e 100644
          return $this;
      }
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
-index 28d88f937a1..85d60a116cf 100644
+index ffdada2720..9e4c47e770 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Tax/Class/ProductController.php
-@@ -169,7 +169,7 @@ protected function _initAction()
-             ->_setActiveMenu('sales/tax/tax_class_product')
+@@ -159,7 +159,7 @@ class Mage_Adminhtml_Tax_Class_ProductController extends Mage_Adminhtml_Controll
+             ->_setActiveMenu('sales/tax/classes_product')
              ->_addBreadcrumb(Mage::helper('tax')->__('Sales'), Mage::helper('tax')->__('Sales'))
              ->_addBreadcrumb(Mage::helper('tax')->__('Tax'), Mage::helper('tax')->__('Tax'))
 -            ->_addBreadcrumb(Mage::helper('tax')->__('Manage Product Tax Classes'), Mage::helper('tax')->__('Manage Product Tax Classes'))
@@ -450,10 +447,10 @@ index 28d88f937a1..85d60a116cf 100644
          return $this;
      }
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
-index f2b94b636dc..4a2c99287ba 100644
+index 299e39c893..87225225b7 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Tax/RateController.php
-@@ -42,16 +42,16 @@ public function indexAction()
+@@ -28,16 +28,16 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -473,7 +470,7 @@ index f2b94b636dc..4a2c99287ba 100644
              )
              ->_addContent($this->getLayout()->createBlock('adminhtml/tax_rate_grid', 'tax_rate_grid'))
              ->renderLayout();
-@@ -65,7 +65,7 @@ public function addAction()
+@@ -52,7 +52,7 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
  
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -482,7 +479,7 @@ index f2b94b636dc..4a2c99287ba 100644
  
          $this->_title($this->__('New Rate'));
  
-@@ -76,7 +76,7 @@ public function addAction()
+@@ -65,7 +65,7 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
          /** @var Mage_Adminhtml_Block_Tax_Rate_Toolbar_Save $block */
          $block = $this->getLayout()->createBlock('adminhtml/tax_rate_toolbar_save');
          $this->_initAction()
@@ -491,7 +488,7 @@ index f2b94b636dc..4a2c99287ba 100644
              ->_addBreadcrumb(Mage::helper('tax')->__('New Tax Rate'), Mage::helper('tax')->__('New Tax Rate'))
              ->_addContent(
                  $block
-@@ -132,7 +132,7 @@ public function editAction()
+@@ -121,7 +121,7 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -500,7 +497,7 @@ index f2b94b636dc..4a2c99287ba 100644
  
          $rateId = (int)$this->getRequest()->getParam('rate');
          $rateModel = Mage::getSingleton('tax/calculation_rate')->load(null);
-@@ -153,7 +153,7 @@ public function editAction()
+@@ -144,7 +144,7 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
          /** @var Mage_Adminhtml_Block_Tax_Rate_Toolbar_Save $block */
          $block = $this->getLayout()->createBlock('adminhtml/tax_rate_toolbar_save');
          $this->_initAction()
@@ -509,7 +506,7 @@ index f2b94b636dc..4a2c99287ba 100644
              ->_addBreadcrumb(Mage::helper('tax')->__('Edit Tax Rate'), Mage::helper('tax')->__('Edit Tax Rate'))
              ->_addContent(
                  $block
-@@ -246,7 +246,7 @@ public function importExportAction()
+@@ -234,7 +234,7 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -519,10 +516,10 @@ index f2b94b636dc..4a2c99287ba 100644
          $this->_title($this->__('Import and Export Tax Rates'));
  
 diff --git a/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php b/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
-index 828db5c956d..a1af1969e69 100644
+index 5362ec9663..8cd4f3ddf8 100644
 --- a/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
 +++ b/app/code/core/Mage/Adminhtml/controllers/Tax/RuleController.php
-@@ -42,7 +42,7 @@ public function indexAction()
+@@ -36,7 +36,7 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -531,7 +528,7 @@ index 828db5c956d..a1af1969e69 100644
  
          $this->_initAction()
              ->_addContent($this->getLayout()->createBlock('adminhtml/tax_rule'))
-@@ -65,7 +65,7 @@ public function editAction()
+@@ -59,7 +59,7 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
      {
          $this->_title($this->__('Sales'))
               ->_title($this->__('Tax'))
@@ -541,10 +538,10 @@ index 828db5c956d..a1af1969e69 100644
          $taxRuleId  = $this->getRequest()->getParam('rule');
          $ruleModel  = Mage::getModel('tax/calculation_rule');
 diff --git a/app/code/core/Mage/Adminhtml/etc/adminhtml.xml b/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
-index e7b78e113b4..79443db233c 100644
+index a48db6818a..637cee5216 100644
 --- a/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Adminhtml/etc/adminhtml.xml
-@@ -68,7 +68,7 @@
+@@ -57,7 +57,7 @@
                      </children>
                  </convert>
                  <currency translate="title">
@@ -553,7 +550,7 @@ index e7b78e113b4..79443db233c 100644
                      <action>adminhtml/system_currency</action>
                      <sort_order>50</sort_order>
                  </currency>
-@@ -110,7 +110,7 @@
+@@ -99,7 +99,7 @@
                      <sort_order>90</sort_order>
                  </cache>
                  <store translate="title" module="core">
@@ -562,7 +559,7 @@ index e7b78e113b4..79443db233c 100644
                      <action>adminhtml/system_store/</action>
                      <sort_order>100</sort_order>
                  </store>
-@@ -159,7 +159,7 @@
+@@ -148,7 +148,7 @@
                                  </children>
                              </acl>
                              <store translate="title">
@@ -571,7 +568,7 @@ index e7b78e113b4..79443db233c 100644
                              </store>
                              <design translate="title">
                                  <title>Design</title>
-@@ -212,7 +212,7 @@
+@@ -201,7 +201,7 @@
                                  </children>
                              </config>
                              <currency translate="title">
@@ -581,10 +578,10 @@ index e7b78e113b4..79443db233c 100644
                              </currency>
                              <email_template translate="title">
 diff --git a/app/code/core/Mage/Catalog/etc/adminhtml.xml b/app/code/core/Mage/Catalog/etc/adminhtml.xml
-index 51432d7310c..a33dd27e506 100644
+index c47c894911..01c12b2e13 100644
 --- a/app/code/core/Mage/Catalog/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Catalog/etc/adminhtml.xml
-@@ -36,12 +36,12 @@
+@@ -25,12 +25,12 @@
              </depends>
              <children>
                  <products translate="title" module="catalog">
@@ -599,7 +596,7 @@ index 51432d7310c..a33dd27e506 100644
                      <action>adminhtml/catalog_category/</action>
                      <sort_order>10</sort_order>
                  </categories>
-@@ -49,11 +49,11 @@
+@@ -38,11 +38,11 @@
                      <title>Attributes</title>
                      <children>
                          <attributes translate="title" module="catalog">
@@ -613,7 +610,7 @@ index 51432d7310c..a33dd27e506 100644
                              <action>adminhtml/catalog_product_set/</action>
                          </sets>
                      </children>
-@@ -90,18 +90,18 @@
+@@ -79,18 +79,18 @@
                                  <title>Attributes</title>
                                  <children>
                                      <attributes translate="title">
@@ -637,10 +634,10 @@ index 51432d7310c..a33dd27e506 100644
                              <update_attributes translate="title">
                                  <title>Update Attributes</title>
 diff --git a/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php b/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
-index 52e3d486eb1..25388125095 100644
+index 2ca6cb0687..24eec138c5 100644
 --- a/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
 +++ b/app/code/core/Mage/CurrencySymbol/Block/Adminhtml/System/Currencysymbol.php
-@@ -74,7 +74,7 @@ protected function _prepareLayout()
+@@ -45,7 +45,7 @@ class Mage_CurrencySymbol_Block_Adminhtml_System_Currencysymbol extends Mage_Adm
       */
      public function getHeader()
      {
@@ -650,10 +647,10 @@ index 52e3d486eb1..25388125095 100644
  
      /**
 diff --git a/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php b/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
-index 07ada9586e3..8dacefdcde6 100644
+index 0812179670..824067c3da 100644
 --- a/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
 +++ b/app/code/core/Mage/CurrencySymbol/controllers/Adminhtml/System/CurrencysymbolController.php
-@@ -46,12 +46,12 @@ public function indexAction()
+@@ -40,12 +40,12 @@ class Mage_CurrencySymbol_Adminhtml_System_CurrencysymbolController extends Mage
                  Mage::helper('currencysymbol')->__('System')
              )
              ->_addBreadcrumb(
@@ -670,10 +667,10 @@ index 07ada9586e3..8dacefdcde6 100644
      }
  
 diff --git a/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml b/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
-index a06feb4951b..81d4f07ad7f 100644
+index 793097320b..01c918d0bb 100644
 --- a/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
 +++ b/app/code/core/Mage/CurrencySymbol/etc/adminhtml.xml
-@@ -30,7 +30,7 @@
+@@ -19,7 +19,7 @@
          <system>
              <children>
                  <currency translate="title" module="currencysymbol">
@@ -682,7 +679,7 @@ index a06feb4951b..81d4f07ad7f 100644
                      <children>
                          <rates translate="title">
                              <title>Rates</title>
-@@ -55,7 +55,7 @@
+@@ -44,7 +44,7 @@
                      <system>
                          <children>
                              <currency translate="title">
@@ -692,10 +689,10 @@ index a06feb4951b..81d4f07ad7f 100644
                                      <rates translate="title">
                                          <title>Rates</title>
 diff --git a/app/code/core/Mage/Customer/etc/adminhtml.xml b/app/code/core/Mage/Customer/etc/adminhtml.xml
-index 5faae9fd604..78205ae6b51 100644
+index 1369bc47fd..255da0c2e3 100644
 --- a/app/code/core/Mage/Customer/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Customer/etc/adminhtml.xml
-@@ -33,7 +33,7 @@
+@@ -22,7 +22,7 @@
              <!-- action>adminhtml/customer/</action -->
              <children>
                  <manage translate="title" module="customer">
@@ -704,7 +701,7 @@ index 5faae9fd604..78205ae6b51 100644
                      <action>adminhtml/customer/</action>
                      <sort_order>0</sort_order>
                  </manage>
-@@ -63,7 +63,7 @@
+@@ -52,7 +52,7 @@
                                  <sort_order>10</sort_order>
                              </group>
                              <manage translate="title">
@@ -714,10 +711,10 @@ index 5faae9fd604..78205ae6b51 100644
                              </manage>
                              <online translate="title">
 diff --git a/app/code/core/Mage/Rating/etc/adminhtml.xml b/app/code/core/Mage/Rating/etc/adminhtml.xml
-index 15ba79e59bd..ed7bded6779 100644
+index 45075f0d44..78130207be 100644
 --- a/app/code/core/Mage/Rating/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Rating/etc/adminhtml.xml
-@@ -35,7 +35,7 @@
+@@ -24,7 +24,7 @@
                              <reviews_ratings>
                                  <children>
                                      <ratings translate="title" module="rating">
@@ -727,23 +724,23 @@ index 15ba79e59bd..ed7bded6779 100644
                                   </children>
                              </reviews_ratings>
 diff --git a/app/code/core/Mage/Review/etc/adminhtml.xml b/app/code/core/Mage/Review/etc/adminhtml.xml
-index 7a77561ef45..c81bf457f9d 100644
+index 36694941ba..76a29185e9 100644
 --- a/app/code/core/Mage/Review/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Review/etc/adminhtml.xml
-@@ -46,7 +46,7 @@
+@@ -35,7 +35,7 @@
                              </children>
                          </reviews>
                          <ratings translate="title" module="review">
 -                            <title>Manage Ratings</title>
 +                            <title>Ratings</title>
-                             <action>adminhtml/rating/</action>
+                             <action>adminhtml/rating/index</action>
                          </ratings>
                      </children>
 diff --git a/app/code/core/Mage/Tax/etc/adminhtml.xml b/app/code/core/Mage/Tax/etc/adminhtml.xml
-index c4672eb5923..128103fee27 100644
+index 593be22d25..f880ac9310 100644
 --- a/app/code/core/Mage/Tax/etc/adminhtml.xml
 +++ b/app/code/core/Mage/Tax/etc/adminhtml.xml
-@@ -34,11 +34,11 @@
+@@ -23,11 +23,11 @@
                      <sort_order>500</sort_order>
                      <children>
                          <rules translate="title" module="tax">
@@ -757,7 +754,7 @@ index c4672eb5923..128103fee27 100644
                              <action>adminhtml/tax_rate</action>
                          </rates>
                          <import_export translate="title" module="tax">
-@@ -81,11 +81,11 @@
+@@ -70,11 +70,11 @@
                                          <sort_order>20</sort_order>
                                      </import_export>
                                      <rates translate="title">
@@ -772,10 +769,10 @@ index c4672eb5923..128103fee27 100644
                                      </rules>
                                  </children>
 diff --git a/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php b/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
-index eac153235e5..bceb5e173c9 100644
+index 2f7ad520e3..c4996f83a5 100644
 --- a/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
 +++ b/app/code/core/Mage/Widget/Block/Adminhtml/Widget/Instance.php
-@@ -40,7 +40,7 @@ public function __construct()
+@@ -28,7 +28,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance extends Mage_Adminhtml_Block_W
      {
          $this->_blockGroup = 'widget';
          $this->_controller = 'adminhtml_widget_instance';
@@ -785,10 +782,10 @@ index eac153235e5..bceb5e173c9 100644
          $this->_updateButton('add', 'label', Mage::helper('widget')->__('Add New Widget Instance'));
      }
 diff --git a/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php b/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
-index 784a1b3b3d4..03c5eee8b16 100644
+index 58a93a3a6f..1c601c6739 100644
 --- a/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
 +++ b/app/code/core/Mage/Widget/controllers/Adminhtml/Widget/InstanceController.php
-@@ -57,8 +57,8 @@ protected function _initAction()
+@@ -51,8 +51,8 @@ class Mage_Widget_Adminhtml_Widget_InstanceController extends Mage_Adminhtml_Con
                  Mage::helper('widget')->__('CMS')
              )
              ->_addBreadcrumb(
@@ -800,10 +797,10 @@ index 784a1b3b3d4..03c5eee8b16 100644
          return $this;
      }
 diff --git a/app/design/adminhtml/default/default/locale/en_US/translate.csv b/app/design/adminhtml/default/default/locale/en_US/translate.csv
-index 05cf0012840..b7852050e78 100644
+index 0a0dc7b517..d70345f458 100644
 --- a/app/design/adminhtml/default/default/locale/en_US/translate.csv
 +++ b/app/design/adminhtml/default/default/locale/en_US/translate.csv
-@@ -64,7 +64,7 @@
+@@ -61,7 +61,7 @@
  "Option","Option"
  "Primary Billing Address","Primary Billing Address"
  "Create Backup","Create Backup"
@@ -812,7 +809,7 @@ index 05cf0012840..b7852050e78 100644
  "Total Due","Total Due"
  "Copyright 2007","Copyright 2007"
  "Newsletter Subscribers","Newsletter Subscribers"
-@@ -188,7 +188,7 @@
+@@ -185,7 +185,7 @@
  "Add New Address","Add New Address"
  "Account Created in:","Account Created in:"
  "Default Billing","Default Billing"
@@ -822,10 +819,10 @@ index 05cf0012840..b7852050e78 100644
  "Please select from each ratings above","Please select from each ratings above"
  "Qty Shipped","Qty Shipped"
 diff --git a/app/design/adminhtml/default/default/template/catalog/product.phtml b/app/design/adminhtml/default/default/template/catalog/product.phtml
-index 0caf2b5d04c..e358e7c7e98 100644
+index 673c7b5970..bc3964d8b2 100644
 --- a/app/design/adminhtml/default/default/template/catalog/product.phtml
 +++ b/app/design/adminhtml/default/default/template/catalog/product.phtml
-@@ -32,7 +32,7 @@
+@@ -21,7 +21,7 @@
  <div class="content-header">
  <table cellspacing="0">
      <tr>
@@ -835,10 +832,10 @@ index 0caf2b5d04c..e358e7c7e98 100644
              <?php echo $this->getButtonsHtml() ?>
          </td>
 diff --git a/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml b/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
-index 65c5a3937b1..ed326faa6d9 100644
+index 8c64adeed0..e4d3182401 100644
 --- a/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
 +++ b/app/design/adminhtml/default/default/template/catalog/product/attribute/options.phtml
-@@ -44,7 +44,7 @@
+@@ -33,7 +33,7 @@
  
  <div class="entity-edit">
      <div class="entry-edit-head">
@@ -847,7 +844,7 @@ index 65c5a3937b1..ed326faa6d9 100644
      </div>
      <div class="box">
              <div class="hor-scroll">
-@@ -69,7 +69,7 @@
+@@ -58,7 +58,7 @@
  <br/>
  <div class="entity-edit" id="matage-options-panel">
      <div class="entry-edit-head">
@@ -857,10 +854,10 @@ index 65c5a3937b1..ed326faa6d9 100644
      <div class="box">
          <div class="hor-scroll">
 diff --git a/app/design/adminhtml/default/default/template/eav/attribute/options.phtml b/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
-index f46541a92d4..774c1c518ea 100644
+index b1894fd71b..ed7b5c5498 100644
 --- a/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
 +++ b/app/design/adminhtml/default/default/template/eav/attribute/options.phtml
-@@ -44,7 +44,7 @@
+@@ -33,7 +33,7 @@
  
  <div class="entity-edit">
      <div class="entry-edit-head">
@@ -869,7 +866,7 @@ index f46541a92d4..774c1c518ea 100644
      </div>
      <div class="box">
              <div class="hor-scroll">
-@@ -69,7 +69,7 @@
+@@ -58,7 +58,7 @@
  <br/>
  <div class="entity-edit" id="matage-options-panel">
      <div class="entry-edit-head">
@@ -879,10 +876,10 @@ index f46541a92d4..774c1c518ea 100644
      <div class="box">
          <div class="hor-scroll">
 diff --git a/app/design/adminhtml/default/default/template/system/config/switcher.phtml b/app/design/adminhtml/default/default/template/system/config/switcher.phtml
-index 381a0d7a711..abeac74c3ca 100644
+index b6d86d1d94..09e672dc3c 100644
 --- a/app/design/adminhtml/default/default/template/system/config/switcher.phtml
 +++ b/app/design/adminhtml/default/default/template/system/config/switcher.phtml
-@@ -44,7 +44,7 @@
+@@ -32,7 +32,7 @@
      </select>
      <?php if (Mage::getSingleton('admin/session')->isAllowed('system/store')): ?>
      <p style="margin:10px 0 0;">
@@ -892,10 +889,10 @@ index 381a0d7a711..abeac74c3ca 100644
      <?php endif ?>
  </div>
 diff --git a/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml b/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
-index 791dc9ea61e..6a8f69cf083 100644
+index 0f2a9314b3..e8b9c5fc3a 100644
 --- a/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
 +++ b/app/design/frontend/base/default/template/customer/account/dashboard/address.phtml
-@@ -28,7 +28,7 @@
+@@ -17,7 +17,7 @@
      <div class="box">
          <div class="box-title">
              <h3><?php echo $this->__('Address Book') ?></h3>
@@ -904,24 +901,11 @@ index 791dc9ea61e..6a8f69cf083 100644
          </div>
          <div class="box-content">
              <div class="col-1">
-diff --git a/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml b/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
-index 3b80fee4050..9dba431111e 100644
---- a/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
-+++ b/app/design/frontend/default/iphone/template/customer/account/dashboard/address.phtml
-@@ -25,7 +25,7 @@
-  */
- ?>
- <div class="col2-set">
--    <h2 class="sub-title"><?php echo $this->__('Address Book') ?> <span class="separator">|</span> <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Manage Addresses') ?></a></h2>
-+    <h2 class="sub-title"><?php echo $this->__('Address Book') ?> <span class="separator">|</span> <a href="<?php echo $this->getAddressBookUrl() ?>"><?php echo $this->__('Addresses') ?></a></h2>
-     <div class="col-1">
-         <div class="info-box">
-             <h3 class="box-title"><?php echo $this->__('Default Billing Address') ?> <span class="separator">|</span> <a href="<?php echo $this->getPrimaryBillingAddressEditUrl() ?>"><?php echo $this->__('Edit') ?></a></h3>
 diff --git a/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml b/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
-index 2956c1f22c0..276570c9bc5 100644
+index 4d6d51762a..728cd0bafc 100644
 --- a/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
 +++ b/app/design/frontend/rwd/default/template/customer/account/dashboard/address.phtml
-@@ -27,7 +27,7 @@
+@@ -16,7 +16,7 @@
  <div class="box-account box-info">
      <div class="box-head">
          <h2><?php echo $this->__('Address Book') ?></h2>
@@ -931,10 +915,10 @@ index 2956c1f22c0..276570c9bc5 100644
      <div class="col2-set">
          <div class="col-1">
 diff --git a/app/locale/en_US/Mage_Adminhtml.csv b/app/locale/en_US/Mage_Adminhtml.csv
-index 5f5f5179293..62f130cc4ee 100644
+index 61a65307dc..976c04cea0 100644
 --- a/app/locale/en_US/Mage_Adminhtml.csv
 +++ b/app/locale/en_US/Mage_Adminhtml.csv
-@@ -567,18 +567,12 @@
+@@ -571,18 +571,12 @@
  "Magento root directory","Magento root directory"
  "OpenMage %s","OpenMage %s"
  "Make sure that data encoding in the file is consistent and saved in one of supported encodings (UTF-8 or ANSI).","Make sure that data encoding in the file is consistent and saved in one of supported encodings (UTF-8 or ANSI)."
@@ -960,10 +944,10 @@ index 5f5f5179293..62f130cc4ee 100644
  "Mass Product Assignment","Mass Product Assignment"
  "Matched Expression","Matched Expression"
 diff --git a/app/locale/en_US/Mage_Catalog.csv b/app/locale/en_US/Mage_Catalog.csv
-index e72d033d9df..0b11a120be2 100644
+index 6f461c89f4..5df7f112cc 100644
 --- a/app/locale/en_US/Mage_Catalog.csv
 +++ b/app/locale/en_US/Mage_Catalog.csv
-@@ -390,17 +390,12 @@
+@@ -389,17 +389,12 @@
  "List Mode","List Mode"
  "List of Products that are set as New","List of Products that are set as New"
  "List of types","List of types"
@@ -987,10 +971,10 @@ index e72d033d9df..0b11a120be2 100644
  "Maximal Depth","Maximal Depth"
  "Maximum Image Size","Maximum Image Size"
 diff --git a/app/locale/en_US/Mage_Checkout.csv b/app/locale/en_US/Mage_Checkout.csv
-index 395c1edbdd0..9ed4d8b4122 100644
+index aece1f29fa..c9ad2ac293 100644
 --- a/app/locale/en_US/Mage_Checkout.csv
 +++ b/app/locale/en_US/Mage_Checkout.csv
-@@ -162,7 +162,7 @@
+@@ -161,7 +161,7 @@
  "Loading next step...","Loading next step..."
  "Login","Login"
  "Login/Registration Before","Login/Registration Before"
@@ -1000,7 +984,7 @@ index 395c1edbdd0..9ed4d8b4122 100644
  "Maximum qty allowed for Shipping to multiple addresses is %s","Maximum qty allowed for Shipping to multiple addresses is %s"
  "Mini-cart promotion block","Mini-cart promotion block"
 diff --git a/app/locale/en_US/Mage_Cms.csv b/app/locale/en_US/Mage_Cms.csv
-index 3920b54d590..9748335e68b 100644
+index 3920b54d59..9748335e68 100644
 --- a/app/locale/en_US/Mage_Cms.csv
 +++ b/app/locale/en_US/Mage_Cms.csv
 @@ -75,7 +75,6 @@
@@ -1012,10 +996,10 @@ index 3920b54d590..9748335e68b 100644
  "Media Storage","Media Storage"
  "Meta Data","Meta Data"
 diff --git a/app/locale/en_US/Mage_Core.csv b/app/locale/en_US/Mage_Core.csv
-index 0f0bfc66135..29acdbb894a 100644
+index cee988a752..2c355dfe9f 100644
 --- a/app/locale/en_US/Mage_Core.csv
 +++ b/app/locale/en_US/Mage_Core.csv
-@@ -202,7 +202,6 @@
+@@ -205,7 +205,6 @@
  "Magento info API","Magento info API"
  "Mail Sending Settings","Mail Sending Settings"
  "Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/","Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/"
@@ -1024,7 +1008,7 @@ index 0f0bfc66135..29acdbb894a 100644
  "Maximum Log Level","Maximum Log Level"
  "Media Storage","Media Storage"
 diff --git a/app/locale/en_US/Mage_CurrencySymbol.csv b/app/locale/en_US/Mage_CurrencySymbol.csv
-index c2702f3fead..98c82294b18 100644
+index c2702f3fea..98c82294b1 100644
 --- a/app/locale/en_US/Mage_CurrencySymbol.csv
 +++ b/app/locale/en_US/Mage_CurrencySymbol.csv
 @@ -1,7 +1,6 @@
@@ -1037,21 +1021,21 @@ index c2702f3fead..98c82294b18 100644
  "Save Currency Symbols","Save Currency Symbols"
  "Symbol","Symbol"
 diff --git a/app/locale/en_US/Mage_Customer.csv b/app/locale/en_US/Mage_Customer.csv
-index 665ea1c17c9..0753e2b1fda 100644
+index e9c526331d..192c79bec5 100644
 --- a/app/locale/en_US/Mage_Customer.csv
 +++ b/app/locale/en_US/Mage_Customer.csv
-@@ -213,8 +213,7 @@
+@@ -212,8 +212,7 @@
  "Login and password are required.","Login and password are required."
  "Login or Create an Account","Login or Create an Account"
  "MM","MM"
 -"Manage Addresses","Manage Addresses"
 -"Manage Customers","Manage Customers"
 +"Addresses","Addresses"
- "Maximum length must be less then %s symbols","Maximum length must be less then %s symbols"
+ "Maximum length must be less then %s symbols","Maximum length must be less than %s symbols"
  "Middle Name","Middle Name"
  "Minimum admin password length","Minimum admin password length"
 diff --git a/app/locale/en_US/Mage_Rating.csv b/app/locale/en_US/Mage_Rating.csv
-index 8c4df144444..20aecb9fe16 100644
+index 8c4df14444..20aecb9fe1 100644
 --- a/app/locale/en_US/Mage_Rating.csv
 +++ b/app/locale/en_US/Mage_Rating.csv
 @@ -11,7 +11,6 @@
@@ -1063,7 +1047,7 @@ index 8c4df144444..20aecb9fe16 100644
  "Option Label","Option Label"
  "Option Title","Option Title"
 diff --git a/app/locale/en_US/Mage_Review.csv b/app/locale/en_US/Mage_Review.csv
-index f72c05005b9..e73e99acf46 100644
+index f72c05005b..e73e99acf4 100644
 --- a/app/locale/en_US/Mage_Review.csv
 +++ b/app/locale/en_US/Mage_Review.csv
 @@ -45,7 +45,6 @@
@@ -1075,7 +1059,7 @@ index f72c05005b9..e73e99acf46 100644
  "My Recent Reviews","My Recent Reviews"
  "Name","Name"
 diff --git a/app/locale/en_US/Mage_SalesRule.csv b/app/locale/en_US/Mage_SalesRule.csv
-index 151b165cc2e..91e32f11008 100644
+index 151b165cc2..91e32f1100 100644
 --- a/app/locale/en_US/Mage_SalesRule.csv
 +++ b/app/locale/en_US/Mage_SalesRule.csv
 @@ -62,7 +62,7 @@
@@ -1088,7 +1072,7 @@ index 151b165cc2e..91e32f11008 100644
  "NOT FOUND","NOT FOUND"
  "NOT LOGGED IN","NOT LOGGED IN"
 diff --git a/app/locale/en_US/Mage_Tag.csv b/app/locale/en_US/Mage_Tag.csv
-index 3fe74078bde..3cc5fd682db 100644
+index 3fe74078bd..3cc5fd682d 100644
 --- a/app/locale/en_US/Mage_Tag.csv
 +++ b/app/locale/en_US/Mage_Tag.csv
 @@ -41,7 +41,6 @@
@@ -1100,7 +1084,7 @@ index 3fe74078bde..3cc5fd682db 100644
  "My Recent Tags","My Recent Tags"
  "My Tags","My Tags"
 diff --git a/app/locale/en_US/Mage_Tax.csv b/app/locale/en_US/Mage_Tax.csv
-index df45a8c0820..8c3b161de85 100644
+index 44cb3552f2..af03d65915 100644
 --- a/app/locale/en_US/Mage_Tax.csv
 +++ b/app/locale/en_US/Mage_Tax.csv
 @@ -70,11 +70,11 @@
@@ -1121,7 +1105,7 @@ index df45a8c0820..8c3b161de85 100644
  "Name","Name"
  "New Class","New Class"
 diff --git a/app/locale/en_US/Mage_Widget.csv b/app/locale/en_US/Mage_Widget.csv
-index c8395c5fe88..6d8af306fde 100644
+index c8395c5fe8..6d8af306fd 100644
 --- a/app/locale/en_US/Mage_Widget.csv
 +++ b/app/locale/en_US/Mage_Widget.csv
 @@ -31,7 +31,7 @@
@@ -1134,10 +1118,10 @@ index c8395c5fe88..6d8af306fde 100644
  "New Widget Instance","New Widget Instance"
  "Next page","Next page"
 diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
-index 081f18219b1..88e1c70d79c 100644
+index 7dfbb9642e..cfc93c740d 100644
 --- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreEntityTest.php
-@@ -42,7 +42,7 @@
+@@ -31,7 +31,7 @@ use Mage\Adminhtml\Test\Page\AdminLogout;
   *
   * Steps:
   * 1. Open Backend
@@ -1147,10 +1131,10 @@ index 081f18219b1..88e1c70d79c 100644
   * 4. Fill data according to dataset
   * 5. Perform all assertions
 diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
-index 4b9990dccfd..edc723b4614 100644
+index a286c21a1e..9a92d37a2f 100644
 --- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateStoreGroupEntityTest.php
-@@ -38,7 +38,7 @@
+@@ -27,7 +27,7 @@ use Mage\Adminhtml\Test\Page\Adminhtml\DeleteStore;
  /**
   * Steps:
   * 1. Log in to backend.
@@ -1160,10 +1144,10 @@ index 4b9990dccfd..edc723b4614 100644
   * 4. Fill data according to dataset.
   * 5. Click "Save Store" button.
 diff --git a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
-index 10f9213dc40..72c07fbd169 100644
+index ae013cd478..4228b32712 100644
 --- a/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Adminhtml/Test/TestCase/CreateWebsiteEntityTest.php
-@@ -40,7 +40,7 @@
+@@ -29,7 +29,7 @@ use Mage\Adminhtml\Test\Page\Adminhtml\DeleteStore;
  /**
   * Steps:
   * 1. Open Backend.
@@ -1173,10 +1157,10 @@ index 10f9213dc40..72c07fbd169 100644
   * 4. Fill data according to dataset.
   * 5. Create Store with created Website.
 diff --git a/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
-index 103106aac49..5827ab81e5d 100644
+index cb21dca3b8..4ebe64c616 100644
 --- a/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Bundle/Test/TestCase/CreateBundleProductEntityTest.php
-@@ -35,7 +35,7 @@
+@@ -24,7 +24,7 @@ use Magento\Mtf\TestCase\Injectable;
  /**
   * Steps:
   * 1. Login to the backend.
@@ -1186,10 +1170,10 @@ index 103106aac49..5827ab81e5d 100644
   * 4. Select Bundle Product and Attribute set.
   * 5. Fill in all data according to data set.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
-index 98ebf203876..7da20935537 100644
+index cf8d39780b..cb1e8ca953 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateConfigurableProductEntityTest.php
-@@ -41,7 +41,7 @@
+@@ -30,7 +30,7 @@ use Mage\Catalog\Test\Fixture\CatalogAttributeSet;
   *
   * Steps:
   * 1. Login to the backend.
@@ -1199,10 +1183,10 @@ index 98ebf203876..7da20935537 100644
   * 4. Select Configurable Product and Attribute set.
   * 5. Select attribute.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
-index fb1a5ee8e37..848ec865704 100644
+index 5511b0a89a..eb4940a7aa 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateGroupedProductEntityTest.php
-@@ -36,7 +36,7 @@
+@@ -25,7 +25,7 @@ use Mage\Catalog\Test\Page\Adminhtml\CatalogProduct;
  /**
   * Steps:
   * 1. Login to the backend.
@@ -1212,10 +1196,10 @@ index fb1a5ee8e37..848ec865704 100644
   * 4. Select "Grouped Product" in product type field and click "Continue".
   * 5. Fill in data according to attached data set.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
-index eeb1a1b7750..87a04926ffb 100644
+index 10fa8aff6b..0712d0194d 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateSimpleProductEntityTest.php
-@@ -38,7 +38,7 @@
+@@ -27,7 +27,7 @@ use Mage\Catalog\Test\Page\Adminhtml\CatalogProduct;
   *
   * Steps:
   * 1. Login to the backend.
@@ -1225,10 +1209,10 @@ index eeb1a1b7750..87a04926ffb 100644
   * 4. Select "Simple Product" in product type field and click "Continue".
   * 5. Fill in data according to attached data set.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
-index e2a573b12cd..73371f68dc7 100644
+index 3de9e53aeb..39c397a802 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/CreateVirtualProductEntityTest.php
-@@ -37,7 +37,7 @@
+@@ -26,7 +26,7 @@ use Magento\Mtf\TestCase\Injectable;
   *
   * Steps:
   * 1. Login to the backend.
@@ -1238,10 +1222,10 @@ index e2a573b12cd..73371f68dc7 100644
   * 4. Select "Virtual Product" in product type field and click "Continue".
   * 5. Fill in data according to attached data set.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
-index 203a532a847..1eb154b5c84 100644
+index 0ac0eaf473..4f3cea6a02 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/DuplicateProductEntityTest.php
-@@ -39,7 +39,7 @@
+@@ -28,7 +28,7 @@ use Magento\Mtf\TestCase\Injectable;
   *
   * Steps:
   * 1. Login to backend.
@@ -1251,10 +1235,10 @@ index 203a532a847..1eb154b5c84 100644
   * 4. Click "Duplicate".
   * 5. Perform asserts.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
-index 584c5d54b9f..e47deb27d6c 100644
+index 96771f1e5d..052972f7d0 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsCrossSellsTest.php
-@@ -32,7 +32,7 @@
+@@ -21,7 +21,7 @@ namespace Mage\Catalog\Test\TestCase\Product;
   *
   * Steps:
   * 1. Open Backend.
@@ -1264,10 +1248,10 @@ index 584c5d54b9f..e47deb27d6c 100644
   * 4. For config1 add as cross-sells: simp1, simp2.
   * 5. Save product.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
-index add362d0dab..2ab64b097a5 100644
+index 35750759f9..ee5f7e4a65 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsRelatedTest.php
-@@ -32,7 +32,7 @@
+@@ -21,7 +21,7 @@ namespace Mage\Catalog\Test\TestCase\Product;
   *
   * Steps:
   * 1. Open Backend.
@@ -1277,10 +1261,10 @@ index add362d0dab..2ab64b097a5 100644
   * 4. For simp1 add as related: config1, simp2.
   * 5. Save product.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
-index 4150c5d07e9..0dbe0e1b492 100644
+index 8120fe565d..30a66e50cd 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/PromoteProductsAsUpSellsTest.php
-@@ -32,7 +32,7 @@
+@@ -21,7 +21,7 @@ namespace Mage\Catalog\Test\TestCase\Product;
   *
   * Steps:
   * 1. Open Backend.
@@ -1290,10 +1274,10 @@ index 4150c5d07e9..0dbe0e1b492 100644
   * 4. For simp1 add as up-sells: config1, simp2.
   * 5. Save product.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
-index 92137df5fed..9e71dbf63b4 100644
+index f66b6693c4..c3e32e29d4 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateConfigurableProductEntityTest.php
-@@ -37,7 +37,7 @@
+@@ -26,7 +26,7 @@ use Magento\Mtf\TestCase\Scenario;
   *
   * Steps:
   * 1. Log in to backend.
@@ -1303,10 +1287,10 @@ index 92137df5fed..9e71dbf63b4 100644
   * 4. Fill in data according to dataset.
   * 5. Save product.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
-index b4e83a4d297..d3286534cce 100644
+index 9cb282b2d8..dbd07cc0e6 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
-@@ -39,7 +39,7 @@
+@@ -28,7 +28,7 @@ use Magento\Mtf\TestCase\Injectable;
   *
   * Steps:
   * 1. Login to backend.
@@ -1316,10 +1300,10 @@ index b4e83a4d297..d3286534cce 100644
   * 4. Edit test value(s) according to dataset.
   * 5. Click "Save".
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
-index 1aacae492ce..4a4551698cc 100644
+index 501c0df1f9..efd7dd1c82 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateAttributeSetEntityTest.php
-@@ -39,7 +39,7 @@
+@@ -28,7 +28,7 @@ use Magento\Mtf\TestCase\Injectable;
   *
   * Steps:
   * 1. Log in to Backend.
@@ -1329,10 +1313,10 @@ index 1aacae492ce..4a4551698cc 100644
   * 4. Fill out fields data according to data set.
   * 5. Add created Product Attribute to Attribute Set.
 diff --git a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
-index 7d28f5cc42d..75ab757b72a 100644
+index 7760138b1b..6eccde5a83 100644
 --- a/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Catalog/Test/TestCase/ProductAttribute/CreateProductAttributeEntityTest.php
-@@ -36,7 +36,7 @@
+@@ -25,7 +25,7 @@ use Mage\Catalog\Test\Fixture\CatalogAttributeSet;
   *
   * Test Flow:
   * 1. Log in to backend.
@@ -1342,10 +1326,10 @@ index 7d28f5cc42d..75ab757b72a 100644
   * 4. Fill out fields data according to data set.
   * 5. Save Product Attribute.
 diff --git a/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php b/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
-index 3714c38766c..84fdf7d441c 100644
+index 92e625b86a..c10463fd7b 100644
 --- a/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/CurrencySymbol/Test/TestCase/EditCurrencySymbolEntityTest.php
-@@ -41,12 +41,12 @@
+@@ -30,12 +30,12 @@ use Mage\CurrencySymbol\Test\Page\Adminhtml\SystemCurrencySymbolIndex;
   * Test Flow:
   * Preconditions:
   * 1. Apply custom currency in Config.
@@ -1361,10 +1345,10 @@ index 3714c38766c..84fdf7d441c 100644
   * 4. Click 'Save Currency Symbols' button.
   * 5. Perform all asserts.
 diff --git a/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php b/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
-index 927a2465d00..571eb7d7a6d 100644
+index f5da619e42..df7f916130 100644
 --- a/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Downloadable/Test/TestCase/CreateDownloadableProductEntityTest.php
-@@ -35,7 +35,7 @@
+@@ -24,7 +24,7 @@ use Magento\Mtf\TestCase\Injectable;
  /**
   * Steps:
   * 1. Log in to Backend.
@@ -1374,10 +1358,10 @@ index 927a2465d00..571eb7d7a6d 100644
   * 4. Fill in data according to data set.
   * 5. Save product.
 diff --git a/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php b/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
-index 94012e77fd1..68c12a3b631 100644
+index 7444deb04c..6faa0acc3e 100644
 --- a/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Sales/Test/TestCase/CreateOrderFromBackendCustomerPageTest.php
-@@ -33,7 +33,7 @@
+@@ -22,7 +22,7 @@ namespace Mage\Sales\Test\TestCase;
   *
   * Steps:
   * 1. Open Backend.
@@ -1387,10 +1371,10 @@ index 94012e77fd1..68c12a3b631 100644
   * 4. Click Create Order button.
   * 5. Add Products according to dataset.
 diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
-index 5a948596ffe..4a9653a3917 100644
+index a11e906ffc..216fc64999 100644
 --- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRateEntityTest.php
-@@ -34,7 +34,7 @@
+@@ -23,7 +23,7 @@ use Magento\Mtf\TestCase\Injectable;
  /**
   * Steps:
   * 1. Log in as default admin user.
@@ -1400,10 +1384,10 @@ index 5a948596ffe..4a9653a3917 100644
   * 4. Fill in data according to dataset
   * 5. Save Tax Rate.
 diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
-index b736dea3f7a..5d041b761a2 100644
+index d821a653e8..5b2652616f 100644
 --- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/CreateTaxRuleEntityTest.php
-@@ -35,7 +35,7 @@
+@@ -24,7 +24,7 @@ use Magento\Mtf\TestCase\Injectable;
   * Steps:
   *
   * 1. Log in to backend.
@@ -1413,10 +1397,10 @@ index b736dea3f7a..5d041b761a2 100644
   * 4. Fill in data according to dataset.
   * 5. Save Tax Rule.
 diff --git a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
-index fad531e4a6c..7c2f50868d8 100644
+index 7f80a00230..07c6b740f3 100644
 --- a/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
 +++ b/dev/tests/functional/tests/app/Mage/Tax/Test/TestCase/DeleteTaxRateEntityTest.php
-@@ -37,7 +37,7 @@
+@@ -26,7 +26,7 @@ use Magento\Mtf\TestCase\Injectable;
   *
   * Steps:
   * 1. Log in as default admin user.

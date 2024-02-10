@@ -24,6 +24,7 @@
 "Password","Slaptažodis"
 "Payment Method","Mokėjimo būdas"
 "Payment Methods","Mokėjimo būdas"
+"Please enter a valid credit card verification number.","Įrašykite galiojantį kredito kortelės patvirtinimo numerį."
 "Purchase Order Number","Užsakymo numeris"
 "Purchase Order Number: %s","<strong>Užsakymo numeris:</strong> <span class=""nowrap"">%s</span>"
 "Saved CC","Išsaugotas CC"

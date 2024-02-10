@@ -12,5 +12,6 @@
 "Number of Symbols","Кількість символів"
 "Number of Unsuccessful Attempts to Login","Кількість невдалих спроб входу"
 "Please specify 8 symbols at the most. Range allowed (e.g. 3-5)","Будь ласка, вкажіть щонайбільше 8 символів. Дозволений діапазон (наприклад, 3-5)"
+"Please type the letters below","Будь ласка, введіть літери нижче"
 "Reload captcha","Перезавантажити captcha"
 "Symbols Used in CAPTCHA","Символи, що використовуються в CAPTCHA"
